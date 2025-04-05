@@ -1,0 +1,48 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    String     @id 
+  email String  @unique
+  savedHouses House[] @relation("SavedHouses")
+  viewedHouses House[] @relation("ViewedHouses")
+  
+}
+
+model House {
+  id        Int     @id @default(autoincrement())
+  name      String?
+  address   String?
+  bathrooms Float?
+  bedrooms  Int?
+  price     Float?
+  utitlities Float?
+  amenities String?
+  image     String?
+  schoolDistance Float?
+  schoolWalkTime Float?
+  groceryDistance Float?
+  groceryWalkTime Float?
+  groceryStore String?
+  groceryAdress String?
+  pharmacyDistance Float?
+  pharmacyWalkTime Float?
+  pharmacyStore String?
+  pharmacyAdress String?
+  downtownDistance Float?
+  downtownWalkTime Float?
+  shuttle   Boolean?
+  legitimate Boolean?
+  savedBy   User[]  @relation("SavedHouses")
+  viewedBy  User[]  @relation("ViewedHouses")
+}
