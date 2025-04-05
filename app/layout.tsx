@@ -7,6 +7,14 @@ import { Geist } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import Link from "next/link";
 import "./globals.css";
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@/components/ui/resizable"
+import FilterBar from "@/components/filter/FilterBar";
+import HouseList from "@/components/house/HouseList";
+import SearchBar from "@/components/search/SearchBar";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -37,21 +45,30 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="min-h-screen flex flex-col items-center">
-            <div className="w-full flex flex-col">
-              <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-                <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
-                  <div className="flex gap-5 items-center font-semibold">
-                    <Link href={"/"}>LOGO</Link>
+          <div className="max-h-screen ">
+            <ResizablePanelGroup direction="horizontal">
+              <ResizablePanel className="shadow-xl rounded-2xl">
+                <div className="flex flex-col">
+                  <nav className="w-full flex justify-center border-b-foreground/10 h-16">
+                    <div className="w-full flex items-center justify-between text-sm px-10">
+                      <div className="flex gap-5 items-center font-semibold">
+                        <Link href={"/"}>LOGO</Link>
+                      </div>
+                      <HeaderAuth />
+                    </div>
+                  </nav>
+                  <SearchBar />
+                  <FilterBar />
+                  <div className="h-[73vh] overflow-auto">
+                    {children}
                   </div>
-                  <HeaderAuth />
+                  
                 </div>
-              </nav>
-              <div className="flex-grow">
-                {children}                
-              </div>
-            </div>
-          </main>
+              </ResizablePanel>
+              <ResizableHandle className="invisible"/>
+              <ResizablePanel>Two three</ResizablePanel>
+            </ResizablePanelGroup>
+          </div>
         </ThemeProvider>
       </body>
     </html>

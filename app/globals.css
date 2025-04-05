@@ -68,5 +68,7 @@
   }
 }
 
-
+::-webkit-scrollbar {
+  display: none;
+}
 
