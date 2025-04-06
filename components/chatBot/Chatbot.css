@@ -127,15 +127,21 @@
   background-color: #4285f4;
   color: white;
   border: none;
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  margin-left: 10px;
+  border-radius: 30px;
+  padding: 8px 16px;
+  margin-left: 5px;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: background-color 0.2s;
+}
+
+.chat-input-container button .button-text {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: black;
 }
 
 .chat-input-container button:hover {
@@ -146,3 +152,4 @@
   background-color: #cccccc;
   cursor: not-allowed;
 } 
+

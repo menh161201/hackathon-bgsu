@@ -121,9 +121,9 @@ const Chatbot: React.FC<ChatbotProps> = ({
       className={`gemini-chatbot ${theme}`} 
       style={{ height, width }}
     >
-      <div className="chat-header">
+      {/* <div className="chat-header">
         <h1><i className="fas fa-robot"></i> {title}</h1>
-      </div>
+      </div> */}
       
       <div className="chat-messages">
         {messages.map((message, index) => (
@@ -158,8 +158,10 @@ const Chatbot: React.FC<ChatbotProps> = ({
         <button 
           onClick={handleSendMessage} 
           disabled={!inputValue.trim() || isTyping}
-        >
+          className="send-button"
+        > 
           <i className="fas fa-paper-plane"></i>
+          <span className="button-text">Send</span>
         </button>
       </div>
     </div>

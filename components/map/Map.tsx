@@ -1,3 +1,10 @@
+/*
+This take a list of addresses and converts them to coordinates
+and then displays them on a map.
+
+
+*/
+
 'use client';
 
 import axios from 'axios';
@@ -108,7 +115,7 @@ export default function Map( {addresses}: {addresses: string[]}) {
   return (
     <div className="flex flex-col min-h-screen p-8">
       <main className="flex-grow flex flex-col gap-8">
-        <h1 className="text-3xl font-bold">Google Maps in Next.js</h1>
+        <h1 className="text-3xl font-bold">Map</h1>
         
         {loadError && (
           <div className="text-red-500 p-4 border border-red-300 rounded">
@@ -137,21 +144,8 @@ export default function Map( {addresses}: {addresses: string[]}) {
           </LoadScript>
         </div>
 
-        <div className="mt-8">
-          <h2 className="text-xl font-semibold mb-4">Locations</h2>
-          <ul className="list-disc pl-5 space-y-2">
-            {addresses.map((address, index) => (
-              <li key={index}>{address}</li>
-            ))}
-          </ul>
-        </div>
+        
       </main>
-      
-      <footer className="mt-8 py-4 border-t">
-        <p className="text-center text-gray-500">
-          Made with Next.js and Google Maps API
-        </p>
-      </footer>
     </div>
   );
 } 
