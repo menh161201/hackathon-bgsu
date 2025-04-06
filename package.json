@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+<<<<<<< HEAD
     "start": "next start"
   },
   "dependencies": {
@@ -17,20 +18,61 @@
     "autoprefixer": "10.4.20",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+=======
+    "start": "next start",
+    "server": "node server.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.0",
+    "@prisma/client": "^6.5.0",
+    "@radix-ui/react-checkbox": "^1.1.4",
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-dropdown-menu": "^2.1.1",
+    "@radix-ui/react-label": "^2.1.0",
+    "@radix-ui/react-popover": "^1.1.6",
+    "@radix-ui/react-radio-group": "^1.2.3",
+    "@radix-ui/react-scroll-area": "^1.2.3",
+    "@radix-ui/react-slider": "^1.2.3",
+    "@radix-ui/react-slot": "^1.1.2",
+    "@react-google-maps/api": "^2.20.6",
+    "@supabase/ssr": "latest",
+    "@supabase/supabase-js": "latest",
+    "autoprefixer": "10.4.20",
+    "axios": "^1.8.4",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+>>>>>>> house
     "lucide-react": "^0.468.0",
     "next": "latest",
     "next-themes": "^0.4.3",
     "prettier": "^3.3.3",
+<<<<<<< HEAD
     "prisma": "^6.5.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-resizable-panels": "^2.1.7"
+=======
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "react-icons": "^5.5.0",
+    "react-resizable-panels": "^2.1.7",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1"
+>>>>>>> house
   },
   "devDependencies": {
     "@types/node": "22.10.2",
     "@types/react": "^19.0.2",
     "@types/react-dom": "19.0.2",
+<<<<<<< HEAD
     "postcss": "8.4.49",
+=======
+    "@types/socket.io-client": "^1.4.36",
+    "postcss": "8.4.49",
+    "prisma": "^6.5.0",
+>>>>>>> house
     "tailwind-merge": "^2.5.2",
     "tailwindcss": "3.4.17",
     "tailwindcss-animate": "^1.0.7",

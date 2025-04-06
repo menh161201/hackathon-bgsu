@@ -19,10 +19,17 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
  */
 export type User = $Result.DefaultSelection<Prisma.$UserPayload>
 /**
+<<<<<<< HEAD
  * Model Post
  * 
  */
 export type Post = $Result.DefaultSelection<Prisma.$PostPayload>
+=======
+ * Model House
+ * 
+ */
+export type House = $Result.DefaultSelection<Prisma.$HousePayload>
+>>>>>>> house
 
 /**
  * ##  Prisma Client ʲˢ
@@ -160,6 +167,7 @@ export class PrismaClient<
   get user(): Prisma.UserDelegate<ExtArgs, ClientOptions>;
 
   /**
+<<<<<<< HEAD
    * `prisma.post`: Exposes CRUD operations for the **Post** model.
     * Example usage:
     * ```ts
@@ -168,6 +176,16 @@ export class PrismaClient<
     * ```
     */
   get post(): Prisma.PostDelegate<ExtArgs, ClientOptions>;
+=======
+   * `prisma.house`: Exposes CRUD operations for the **House** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Houses
+    * const houses = await prisma.house.findMany()
+    * ```
+    */
+  get house(): Prisma.HouseDelegate<ExtArgs, ClientOptions>;
+>>>>>>> house
 }
 
 export namespace Prisma {
@@ -609,7 +627,11 @@ export namespace Prisma {
 
   export const ModelName: {
     User: 'User',
+<<<<<<< HEAD
     Post: 'Post'
+=======
+    House: 'House'
+>>>>>>> house
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -628,7 +650,11 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
+<<<<<<< HEAD
       modelProps: "user" | "post"
+=======
+      modelProps: "user" | "house"
+>>>>>>> house
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -706,6 +732,7 @@ export namespace Prisma {
           }
         }
       }
+<<<<<<< HEAD
       Post: {
         payload: Prisma.$PostPayload<ExtArgs>
         fields: Prisma.PostFieldRefs
@@ -777,6 +804,79 @@ export namespace Prisma {
           count: {
             args: Prisma.PostCountArgs<ExtArgs>
             result: $Utils.Optional<PostCountAggregateOutputType> | number
+=======
+      House: {
+        payload: Prisma.$HousePayload<ExtArgs>
+        fields: Prisma.HouseFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.HouseFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HousePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.HouseFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HousePayload>
+          }
+          findFirst: {
+            args: Prisma.HouseFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HousePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.HouseFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HousePayload>
+          }
+          findMany: {
+            args: Prisma.HouseFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HousePayload>[]
+          }
+          create: {
+            args: Prisma.HouseCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HousePayload>
+          }
+          createMany: {
+            args: Prisma.HouseCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.HouseCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HousePayload>[]
+          }
+          delete: {
+            args: Prisma.HouseDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HousePayload>
+          }
+          update: {
+            args: Prisma.HouseUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HousePayload>
+          }
+          deleteMany: {
+            args: Prisma.HouseDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.HouseUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.HouseUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HousePayload>[]
+          }
+          upsert: {
+            args: Prisma.HouseUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$HousePayload>
+          }
+          aggregate: {
+            args: Prisma.HouseAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateHouse>
+          }
+          groupBy: {
+            args: Prisma.HouseGroupByArgs<ExtArgs>
+            result: $Utils.Optional<HouseGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.HouseCountArgs<ExtArgs>
+            result: $Utils.Optional<HouseCountAggregateOutputType> | number
+>>>>>>> house
           }
         }
       }
@@ -865,7 +965,11 @@ export namespace Prisma {
   }
   export type GlobalOmitConfig = {
     user?: UserOmit
+<<<<<<< HEAD
     post?: PostOmit
+=======
+    house?: HouseOmit
+>>>>>>> house
   }
 
   /* Types for Logging */
@@ -960,11 +1064,21 @@ export namespace Prisma {
    */
 
   export type UserCountOutputType = {
+<<<<<<< HEAD
     posts: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     posts?: boolean | UserCountOutputTypeCountPostsArgs
+=======
+    savedHouses: number
+    viewedHouses: number
+  }
+
+  export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    savedHouses?: boolean | UserCountOutputTypeCountSavedHousesArgs
+    viewedHouses?: boolean | UserCountOutputTypeCountViewedHousesArgs
+>>>>>>> house
   }
 
   // Custom InputTypes
@@ -981,8 +1095,60 @@ export namespace Prisma {
   /**
    * UserCountOutputType without action
    */
+<<<<<<< HEAD
   export type UserCountOutputTypeCountPostsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: PostWhereInput
+=======
+  export type UserCountOutputTypeCountSavedHousesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HouseWhereInput
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountViewedHousesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HouseWhereInput
+  }
+
+
+  /**
+   * Count Type HouseCountOutputType
+   */
+
+  export type HouseCountOutputType = {
+    savedBy: number
+    viewedBy: number
+  }
+
+  export type HouseCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    savedBy?: boolean | HouseCountOutputTypeCountSavedByArgs
+    viewedBy?: boolean | HouseCountOutputTypeCountViewedByArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * HouseCountOutputType without action
+   */
+  export type HouseCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the HouseCountOutputType
+     */
+    select?: HouseCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * HouseCountOutputType without action
+   */
+  export type HouseCountOutputTypeCountSavedByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: UserWhereInput
+  }
+
+  /**
+   * HouseCountOutputType without action
+   */
+  export type HouseCountOutputTypeCountViewedByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: UserWhereInput
+>>>>>>> house
   }
 
 
@@ -996,12 +1162,16 @@ export namespace Prisma {
 
   export type AggregateUser = {
     _count: UserCountAggregateOutputType | null
+<<<<<<< HEAD
     _avg: UserAvgAggregateOutputType | null
     _sum: UserSumAggregateOutputType | null
+=======
+>>>>>>> house
     _min: UserMinAggregateOutputType | null
     _max: UserMaxAggregateOutputType | null
   }
 
+<<<<<<< HEAD
   export type UserAvgAggregateOutputType = {
     id: number | null
   }
@@ -1020,16 +1190,30 @@ export namespace Prisma {
     id: number | null
     email: string | null
     name: string | null
+=======
+  export type UserMinAggregateOutputType = {
+    id: string | null
+    email: string | null
+  }
+
+  export type UserMaxAggregateOutputType = {
+    id: string | null
+    email: string | null
+>>>>>>> house
   }
 
   export type UserCountAggregateOutputType = {
     id: number
     email: number
+<<<<<<< HEAD
     name: number
+=======
+>>>>>>> house
     _all: number
   }
 
 
+<<<<<<< HEAD
   export type UserAvgAggregateInputType = {
     id?: true
   }
@@ -1042,18 +1226,29 @@ export namespace Prisma {
     id?: true
     email?: true
     name?: true
+=======
+  export type UserMinAggregateInputType = {
+    id?: true
+    email?: true
+>>>>>>> house
   }
 
   export type UserMaxAggregateInputType = {
     id?: true
     email?: true
+<<<<<<< HEAD
     name?: true
+=======
+>>>>>>> house
   }
 
   export type UserCountAggregateInputType = {
     id?: true
     email?: true
+<<<<<<< HEAD
     name?: true
+=======
+>>>>>>> house
     _all?: true
   }
 
@@ -1095,6 +1290,7 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
+<<<<<<< HEAD
      * Select which fields to average
     **/
     _avg?: UserAvgAggregateInputType
@@ -1107,6 +1303,8 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
+=======
+>>>>>>> house
      * Select which fields to find the minimum value
     **/
     _min?: UserMinAggregateInputType
@@ -1137,19 +1335,28 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: UserCountAggregateInputType | true
+<<<<<<< HEAD
     _avg?: UserAvgAggregateInputType
     _sum?: UserSumAggregateInputType
+=======
+>>>>>>> house
     _min?: UserMinAggregateInputType
     _max?: UserMaxAggregateInputType
   }
 
   export type UserGroupByOutputType = {
+<<<<<<< HEAD
     id: number
     email: string
     name: string | null
     _count: UserCountAggregateOutputType | null
     _avg: UserAvgAggregateOutputType | null
     _sum: UserSumAggregateOutputType | null
+=======
+    id: string
+    email: string
+    _count: UserCountAggregateOutputType | null
+>>>>>>> house
     _min: UserMinAggregateOutputType | null
     _max: UserMaxAggregateOutputType | null
   }
@@ -1171,32 +1378,52 @@ export namespace Prisma {
   export type UserSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     email?: boolean
+<<<<<<< HEAD
     name?: boolean
     posts?: boolean | User$postsArgs<ExtArgs>
+=======
+    savedHouses?: boolean | User$savedHousesArgs<ExtArgs>
+    viewedHouses?: boolean | User$viewedHousesArgs<ExtArgs>
+>>>>>>> house
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     email?: boolean
+<<<<<<< HEAD
     name?: boolean
+=======
+>>>>>>> house
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     email?: boolean
+<<<<<<< HEAD
     name?: boolean
+=======
+>>>>>>> house
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectScalar = {
     id?: boolean
     email?: boolean
+<<<<<<< HEAD
     name?: boolean
   }
 
   export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email" | "name", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     posts?: boolean | User$postsArgs<ExtArgs>
+=======
+  }
+
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "email", ExtArgs["result"]["user"]>
+  export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    savedHouses?: boolean | User$savedHousesArgs<ExtArgs>
+    viewedHouses?: boolean | User$viewedHousesArgs<ExtArgs>
+>>>>>>> house
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -1205,12 +1432,21 @@ export namespace Prisma {
   export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "User"
     objects: {
+<<<<<<< HEAD
       posts: Prisma.$PostPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
       email: string
       name: string | null
+=======
+      savedHouses: Prisma.$HousePayload<ExtArgs>[]
+      viewedHouses: Prisma.$HousePayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      email: string
+>>>>>>> house
     }, ExtArgs["result"]["user"]>
     composites: {}
   }
@@ -1605,7 +1841,12 @@ export namespace Prisma {
    */
   export interface Prisma__UserClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
+<<<<<<< HEAD
     posts<T extends User$postsArgs<ExtArgs> = {}>(args?: Subset<T, User$postsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PostPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+=======
+    savedHouses<T extends User$savedHousesArgs<ExtArgs> = {}>(args?: Subset<T, User$savedHousesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HousePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    viewedHouses<T extends User$viewedHousesArgs<ExtArgs> = {}>(args?: Subset<T, User$viewedHousesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HousePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+>>>>>>> house
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1635,9 +1876,14 @@ export namespace Prisma {
    * Fields of the User model
    */ 
   interface UserFieldRefs {
+<<<<<<< HEAD
     readonly id: FieldRef<"User", 'Int'>
     readonly email: FieldRef<"User", 'String'>
     readonly name: FieldRef<"User", 'String'>
+=======
+    readonly id: FieldRef<"User", 'String'>
+    readonly email: FieldRef<"User", 'String'>
+>>>>>>> house
   }
     
 
@@ -2024,6 +2270,7 @@ export namespace Prisma {
   }
 
   /**
+<<<<<<< HEAD
    * User.posts
    */
   export type User$postsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -2045,6 +2292,53 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: PostScalarFieldEnum | PostScalarFieldEnum[]
+=======
+   * User.savedHouses
+   */
+  export type User$savedHousesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the House
+     */
+    select?: HouseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the House
+     */
+    omit?: HouseOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HouseInclude<ExtArgs> | null
+    where?: HouseWhereInput
+    orderBy?: HouseOrderByWithRelationInput | HouseOrderByWithRelationInput[]
+    cursor?: HouseWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: HouseScalarFieldEnum | HouseScalarFieldEnum[]
+  }
+
+  /**
+   * User.viewedHouses
+   */
+  export type User$viewedHousesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the House
+     */
+    select?: HouseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the House
+     */
+    omit?: HouseOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HouseInclude<ExtArgs> | null
+    where?: HouseWhereInput
+    orderBy?: HouseOrderByWithRelationInput | HouseOrderByWithRelationInput[]
+    cursor?: HouseWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: HouseScalarFieldEnum | HouseScalarFieldEnum[]
+>>>>>>> house
   }
 
   /**
@@ -2067,6 +2361,7 @@ export namespace Prisma {
 
 
   /**
+<<<<<<< HEAD
    * Model Post
    */
 
@@ -2110,10 +2405,150 @@ export namespace Prisma {
     content: number
     published: number
     authorId: number
+=======
+   * Model House
+   */
+
+  export type AggregateHouse = {
+    _count: HouseCountAggregateOutputType | null
+    _avg: HouseAvgAggregateOutputType | null
+    _sum: HouseSumAggregateOutputType | null
+    _min: HouseMinAggregateOutputType | null
+    _max: HouseMaxAggregateOutputType | null
+  }
+
+  export type HouseAvgAggregateOutputType = {
+    id: number | null
+    bathrooms: number | null
+    bedrooms: number | null
+    price: number | null
+    schoolDistance: number | null
+    schoolWalkTime: number | null
+    groceryDistance: number | null
+    groceryWalkTime: number | null
+    pharmacyDistance: number | null
+    pharmacyWalkTime: number | null
+    downtownDistance: number | null
+    downtownWalkTime: number | null
+    cluster: number | null
+  }
+
+  export type HouseSumAggregateOutputType = {
+    id: number | null
+    bathrooms: number | null
+    bedrooms: number | null
+    price: number | null
+    schoolDistance: number | null
+    schoolWalkTime: number | null
+    groceryDistance: number | null
+    groceryWalkTime: number | null
+    pharmacyDistance: number | null
+    pharmacyWalkTime: number | null
+    downtownDistance: number | null
+    downtownWalkTime: number | null
+    cluster: number | null
+  }
+
+  export type HouseMinAggregateOutputType = {
+    id: number | null
+    name: string | null
+    address: string | null
+    bathrooms: number | null
+    bedrooms: number | null
+    price: number | null
+    contact: string | null
+    amenities: string | null
+    image: string | null
+    schoolDistance: number | null
+    schoolWalkTime: number | null
+    groceryDistance: number | null
+    groceryWalkTime: number | null
+    groceryStore: string | null
+    groceryAdress: string | null
+    pharmacyDistance: number | null
+    pharmacyWalkTime: number | null
+    pharmacyStore: string | null
+    pharmacyAdress: string | null
+    downtownDistance: number | null
+    downtownWalkTime: number | null
+    shuttle: boolean | null
+    legitimate: boolean | null
+    laundry: boolean | null
+    parking: boolean | null
+    ac: boolean | null
+    pet: boolean | null
+    dishwasher: boolean | null
+    cluster: number | null
+  }
+
+  export type HouseMaxAggregateOutputType = {
+    id: number | null
+    name: string | null
+    address: string | null
+    bathrooms: number | null
+    bedrooms: number | null
+    price: number | null
+    contact: string | null
+    amenities: string | null
+    image: string | null
+    schoolDistance: number | null
+    schoolWalkTime: number | null
+    groceryDistance: number | null
+    groceryWalkTime: number | null
+    groceryStore: string | null
+    groceryAdress: string | null
+    pharmacyDistance: number | null
+    pharmacyWalkTime: number | null
+    pharmacyStore: string | null
+    pharmacyAdress: string | null
+    downtownDistance: number | null
+    downtownWalkTime: number | null
+    shuttle: boolean | null
+    legitimate: boolean | null
+    laundry: boolean | null
+    parking: boolean | null
+    ac: boolean | null
+    pet: boolean | null
+    dishwasher: boolean | null
+    cluster: number | null
+  }
+
+  export type HouseCountAggregateOutputType = {
+    id: number
+    name: number
+    address: number
+    bathrooms: number
+    bedrooms: number
+    price: number
+    contact: number
+    amenities: number
+    image: number
+    schoolDistance: number
+    schoolWalkTime: number
+    groceryDistance: number
+    groceryWalkTime: number
+    groceryStore: number
+    groceryAdress: number
+    pharmacyDistance: number
+    pharmacyWalkTime: number
+    pharmacyStore: number
+    pharmacyAdress: number
+    downtownDistance: number
+    downtownWalkTime: number
+    shuttle: number
+    legitimate: number
+    laundry: number
+    parking: number
+    ac: number
+    pet: number
+    dishwasher: number
+    cluster: number
+>>>>>>> house
     _all: number
   }
 
 
+<<<<<<< HEAD
   export type PostAvgAggregateInputType = {
     id?: true
     authorId?: true
@@ -2160,53 +2595,226 @@ export namespace Prisma {
      * Determine the order of Posts to fetch.
      */
     orderBy?: PostOrderByWithRelationInput | PostOrderByWithRelationInput[]
+=======
+  export type HouseAvgAggregateInputType = {
+    id?: true
+    bathrooms?: true
+    bedrooms?: true
+    price?: true
+    schoolDistance?: true
+    schoolWalkTime?: true
+    groceryDistance?: true
+    groceryWalkTime?: true
+    pharmacyDistance?: true
+    pharmacyWalkTime?: true
+    downtownDistance?: true
+    downtownWalkTime?: true
+    cluster?: true
+  }
+
+  export type HouseSumAggregateInputType = {
+    id?: true
+    bathrooms?: true
+    bedrooms?: true
+    price?: true
+    schoolDistance?: true
+    schoolWalkTime?: true
+    groceryDistance?: true
+    groceryWalkTime?: true
+    pharmacyDistance?: true
+    pharmacyWalkTime?: true
+    downtownDistance?: true
+    downtownWalkTime?: true
+    cluster?: true
+  }
+
+  export type HouseMinAggregateInputType = {
+    id?: true
+    name?: true
+    address?: true
+    bathrooms?: true
+    bedrooms?: true
+    price?: true
+    contact?: true
+    amenities?: true
+    image?: true
+    schoolDistance?: true
+    schoolWalkTime?: true
+    groceryDistance?: true
+    groceryWalkTime?: true
+    groceryStore?: true
+    groceryAdress?: true
+    pharmacyDistance?: true
+    pharmacyWalkTime?: true
+    pharmacyStore?: true
+    pharmacyAdress?: true
+    downtownDistance?: true
+    downtownWalkTime?: true
+    shuttle?: true
+    legitimate?: true
+    laundry?: true
+    parking?: true
+    ac?: true
+    pet?: true
+    dishwasher?: true
+    cluster?: true
+  }
+
+  export type HouseMaxAggregateInputType = {
+    id?: true
+    name?: true
+    address?: true
+    bathrooms?: true
+    bedrooms?: true
+    price?: true
+    contact?: true
+    amenities?: true
+    image?: true
+    schoolDistance?: true
+    schoolWalkTime?: true
+    groceryDistance?: true
+    groceryWalkTime?: true
+    groceryStore?: true
+    groceryAdress?: true
+    pharmacyDistance?: true
+    pharmacyWalkTime?: true
+    pharmacyStore?: true
+    pharmacyAdress?: true
+    downtownDistance?: true
+    downtownWalkTime?: true
+    shuttle?: true
+    legitimate?: true
+    laundry?: true
+    parking?: true
+    ac?: true
+    pet?: true
+    dishwasher?: true
+    cluster?: true
+  }
+
+  export type HouseCountAggregateInputType = {
+    id?: true
+    name?: true
+    address?: true
+    bathrooms?: true
+    bedrooms?: true
+    price?: true
+    contact?: true
+    amenities?: true
+    image?: true
+    schoolDistance?: true
+    schoolWalkTime?: true
+    groceryDistance?: true
+    groceryWalkTime?: true
+    groceryStore?: true
+    groceryAdress?: true
+    pharmacyDistance?: true
+    pharmacyWalkTime?: true
+    pharmacyStore?: true
+    pharmacyAdress?: true
+    downtownDistance?: true
+    downtownWalkTime?: true
+    shuttle?: true
+    legitimate?: true
+    laundry?: true
+    parking?: true
+    ac?: true
+    pet?: true
+    dishwasher?: true
+    cluster?: true
+    _all?: true
+  }
+
+  export type HouseAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which House to aggregate.
+     */
+    where?: HouseWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Houses to fetch.
+     */
+    orderBy?: HouseOrderByWithRelationInput | HouseOrderByWithRelationInput[]
+>>>>>>> house
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
+<<<<<<< HEAD
     cursor?: PostWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
      * Take `±n` Posts from the position of the cursor.
+=======
+    cursor?: HouseWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Houses from the position of the cursor.
+>>>>>>> house
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
+<<<<<<< HEAD
      * Skip the first `n` Posts.
+=======
+     * Skip the first `n` Houses.
+>>>>>>> house
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
+<<<<<<< HEAD
      * Count returned Posts
     **/
     _count?: true | PostCountAggregateInputType
+=======
+     * Count returned Houses
+    **/
+    _count?: true | HouseCountAggregateInputType
+>>>>>>> house
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
+<<<<<<< HEAD
     _avg?: PostAvgAggregateInputType
+=======
+    _avg?: HouseAvgAggregateInputType
+>>>>>>> house
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
+<<<<<<< HEAD
     _sum?: PostSumAggregateInputType
+=======
+    _sum?: HouseSumAggregateInputType
+>>>>>>> house
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
+<<<<<<< HEAD
     _min?: PostMinAggregateInputType
+=======
+    _min?: HouseMinAggregateInputType
+>>>>>>> house
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
+<<<<<<< HEAD
     _max?: PostMaxAggregateInputType
   }
 
@@ -2216,11 +2824,23 @@ export namespace Prisma {
         ? number
         : GetScalarType<T[P], AggregatePost[P]>
       : GetScalarType<T[P], AggregatePost[P]>
+=======
+    _max?: HouseMaxAggregateInputType
+  }
+
+  export type GetHouseAggregateType<T extends HouseAggregateArgs> = {
+        [P in keyof T & keyof AggregateHouse]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateHouse[P]>
+      : GetScalarType<T[P], AggregateHouse[P]>
+>>>>>>> house
   }
 
 
 
 
+<<<<<<< HEAD
   export type PostGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: PostWhereInput
     orderBy?: PostOrderByWithAggregationInput | PostOrderByWithAggregationInput[]
@@ -2257,11 +2877,74 @@ export namespace Prisma {
               ? number
               : GetScalarType<T[P], PostGroupByOutputType[P]>
             : GetScalarType<T[P], PostGroupByOutputType[P]>
+=======
+  export type HouseGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: HouseWhereInput
+    orderBy?: HouseOrderByWithAggregationInput | HouseOrderByWithAggregationInput[]
+    by: HouseScalarFieldEnum[] | HouseScalarFieldEnum
+    having?: HouseScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: HouseCountAggregateInputType | true
+    _avg?: HouseAvgAggregateInputType
+    _sum?: HouseSumAggregateInputType
+    _min?: HouseMinAggregateInputType
+    _max?: HouseMaxAggregateInputType
+  }
+
+  export type HouseGroupByOutputType = {
+    id: number
+    name: string | null
+    address: string | null
+    bathrooms: number | null
+    bedrooms: number | null
+    price: number | null
+    contact: string | null
+    amenities: string | null
+    image: string | null
+    schoolDistance: number | null
+    schoolWalkTime: number | null
+    groceryDistance: number | null
+    groceryWalkTime: number | null
+    groceryStore: string | null
+    groceryAdress: string | null
+    pharmacyDistance: number | null
+    pharmacyWalkTime: number | null
+    pharmacyStore: string | null
+    pharmacyAdress: string | null
+    downtownDistance: number | null
+    downtownWalkTime: number | null
+    shuttle: boolean | null
+    legitimate: boolean | null
+    laundry: boolean | null
+    parking: boolean | null
+    ac: boolean | null
+    pet: boolean | null
+    dishwasher: boolean | null
+    cluster: number | null
+    _count: HouseCountAggregateOutputType | null
+    _avg: HouseAvgAggregateOutputType | null
+    _sum: HouseSumAggregateOutputType | null
+    _min: HouseMinAggregateOutputType | null
+    _max: HouseMaxAggregateOutputType | null
+  }
+
+  type GetHouseGroupByPayload<T extends HouseGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<HouseGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof HouseGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], HouseGroupByOutputType[P]>
+            : GetScalarType<T[P], HouseGroupByOutputType[P]>
+>>>>>>> house
         }
       >
     >
 
 
+<<<<<<< HEAD
   export type PostSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     title?: boolean
@@ -2338,11 +3021,209 @@ export namespace Prisma {
      * @example
      * // Get one Post
      * const post = await prisma.post.findUnique({
+=======
+  export type HouseSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    address?: boolean
+    bathrooms?: boolean
+    bedrooms?: boolean
+    price?: boolean
+    contact?: boolean
+    amenities?: boolean
+    image?: boolean
+    schoolDistance?: boolean
+    schoolWalkTime?: boolean
+    groceryDistance?: boolean
+    groceryWalkTime?: boolean
+    groceryStore?: boolean
+    groceryAdress?: boolean
+    pharmacyDistance?: boolean
+    pharmacyWalkTime?: boolean
+    pharmacyStore?: boolean
+    pharmacyAdress?: boolean
+    downtownDistance?: boolean
+    downtownWalkTime?: boolean
+    shuttle?: boolean
+    legitimate?: boolean
+    laundry?: boolean
+    parking?: boolean
+    ac?: boolean
+    pet?: boolean
+    dishwasher?: boolean
+    cluster?: boolean
+    savedBy?: boolean | House$savedByArgs<ExtArgs>
+    viewedBy?: boolean | House$viewedByArgs<ExtArgs>
+    _count?: boolean | HouseCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["house"]>
+
+  export type HouseSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    address?: boolean
+    bathrooms?: boolean
+    bedrooms?: boolean
+    price?: boolean
+    contact?: boolean
+    amenities?: boolean
+    image?: boolean
+    schoolDistance?: boolean
+    schoolWalkTime?: boolean
+    groceryDistance?: boolean
+    groceryWalkTime?: boolean
+    groceryStore?: boolean
+    groceryAdress?: boolean
+    pharmacyDistance?: boolean
+    pharmacyWalkTime?: boolean
+    pharmacyStore?: boolean
+    pharmacyAdress?: boolean
+    downtownDistance?: boolean
+    downtownWalkTime?: boolean
+    shuttle?: boolean
+    legitimate?: boolean
+    laundry?: boolean
+    parking?: boolean
+    ac?: boolean
+    pet?: boolean
+    dishwasher?: boolean
+    cluster?: boolean
+  }, ExtArgs["result"]["house"]>
+
+  export type HouseSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    address?: boolean
+    bathrooms?: boolean
+    bedrooms?: boolean
+    price?: boolean
+    contact?: boolean
+    amenities?: boolean
+    image?: boolean
+    schoolDistance?: boolean
+    schoolWalkTime?: boolean
+    groceryDistance?: boolean
+    groceryWalkTime?: boolean
+    groceryStore?: boolean
+    groceryAdress?: boolean
+    pharmacyDistance?: boolean
+    pharmacyWalkTime?: boolean
+    pharmacyStore?: boolean
+    pharmacyAdress?: boolean
+    downtownDistance?: boolean
+    downtownWalkTime?: boolean
+    shuttle?: boolean
+    legitimate?: boolean
+    laundry?: boolean
+    parking?: boolean
+    ac?: boolean
+    pet?: boolean
+    dishwasher?: boolean
+    cluster?: boolean
+  }, ExtArgs["result"]["house"]>
+
+  export type HouseSelectScalar = {
+    id?: boolean
+    name?: boolean
+    address?: boolean
+    bathrooms?: boolean
+    bedrooms?: boolean
+    price?: boolean
+    contact?: boolean
+    amenities?: boolean
+    image?: boolean
+    schoolDistance?: boolean
+    schoolWalkTime?: boolean
+    groceryDistance?: boolean
+    groceryWalkTime?: boolean
+    groceryStore?: boolean
+    groceryAdress?: boolean
+    pharmacyDistance?: boolean
+    pharmacyWalkTime?: boolean
+    pharmacyStore?: boolean
+    pharmacyAdress?: boolean
+    downtownDistance?: boolean
+    downtownWalkTime?: boolean
+    shuttle?: boolean
+    legitimate?: boolean
+    laundry?: boolean
+    parking?: boolean
+    ac?: boolean
+    pet?: boolean
+    dishwasher?: boolean
+    cluster?: boolean
+  }
+
+  export type HouseOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "address" | "bathrooms" | "bedrooms" | "price" | "contact" | "amenities" | "image" | "schoolDistance" | "schoolWalkTime" | "groceryDistance" | "groceryWalkTime" | "groceryStore" | "groceryAdress" | "pharmacyDistance" | "pharmacyWalkTime" | "pharmacyStore" | "pharmacyAdress" | "downtownDistance" | "downtownWalkTime" | "shuttle" | "legitimate" | "laundry" | "parking" | "ac" | "pet" | "dishwasher" | "cluster", ExtArgs["result"]["house"]>
+  export type HouseInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    savedBy?: boolean | House$savedByArgs<ExtArgs>
+    viewedBy?: boolean | House$viewedByArgs<ExtArgs>
+    _count?: boolean | HouseCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type HouseIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type HouseIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $HousePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "House"
+    objects: {
+      savedBy: Prisma.$UserPayload<ExtArgs>[]
+      viewedBy: Prisma.$UserPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      name: string | null
+      address: string | null
+      bathrooms: number | null
+      bedrooms: number | null
+      price: number | null
+      contact: string | null
+      amenities: string | null
+      image: string | null
+      schoolDistance: number | null
+      schoolWalkTime: number | null
+      groceryDistance: number | null
+      groceryWalkTime: number | null
+      groceryStore: string | null
+      groceryAdress: string | null
+      pharmacyDistance: number | null
+      pharmacyWalkTime: number | null
+      pharmacyStore: string | null
+      pharmacyAdress: string | null
+      downtownDistance: number | null
+      downtownWalkTime: number | null
+      shuttle: boolean | null
+      legitimate: boolean | null
+      laundry: boolean | null
+      parking: boolean | null
+      ac: boolean | null
+      pet: boolean | null
+      dishwasher: boolean | null
+      cluster: number | null
+    }, ExtArgs["result"]["house"]>
+    composites: {}
+  }
+
+  type HouseGetPayload<S extends boolean | null | undefined | HouseDefaultArgs> = $Result.GetResult<Prisma.$HousePayload, S>
+
+  type HouseCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<HouseFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: HouseCountAggregateInputType | true
+    }
+
+  export interface HouseDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['House'], meta: { name: 'House' } }
+    /**
+     * Find zero or one House that matches the filter.
+     * @param {HouseFindUniqueArgs} args - Arguments to find a House
+     * @example
+     * // Get one House
+     * const house = await prisma.house.findUnique({
+>>>>>>> house
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
+<<<<<<< HEAD
     findUnique<T extends PostFindUniqueArgs>(args: SelectSubset<T, PostFindUniqueArgs<ExtArgs>>): Prisma__PostClient<$Result.GetResult<Prisma.$PostPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
@@ -2352,11 +3233,23 @@ export namespace Prisma {
      * @example
      * // Get one Post
      * const post = await prisma.post.findUniqueOrThrow({
+=======
+    findUnique<T extends HouseFindUniqueArgs>(args: SelectSubset<T, HouseFindUniqueArgs<ExtArgs>>): Prisma__HouseClient<$Result.GetResult<Prisma.$HousePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one House that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {HouseFindUniqueOrThrowArgs} args - Arguments to find a House
+     * @example
+     * // Get one House
+     * const house = await prisma.house.findUniqueOrThrow({
+>>>>>>> house
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
+<<<<<<< HEAD
     findUniqueOrThrow<T extends PostFindUniqueOrThrowArgs>(args: SelectSubset<T, PostFindUniqueOrThrowArgs<ExtArgs>>): Prisma__PostClient<$Result.GetResult<Prisma.$PostPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
@@ -2367,11 +3260,24 @@ export namespace Prisma {
      * @example
      * // Get one Post
      * const post = await prisma.post.findFirst({
+=======
+    findUniqueOrThrow<T extends HouseFindUniqueOrThrowArgs>(args: SelectSubset<T, HouseFindUniqueOrThrowArgs<ExtArgs>>): Prisma__HouseClient<$Result.GetResult<Prisma.$HousePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first House that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HouseFindFirstArgs} args - Arguments to find a House
+     * @example
+     * // Get one House
+     * const house = await prisma.house.findFirst({
+>>>>>>> house
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
+<<<<<<< HEAD
     findFirst<T extends PostFindFirstArgs>(args?: SelectSubset<T, PostFindFirstArgs<ExtArgs>>): Prisma__PostClient<$Result.GetResult<Prisma.$PostPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
@@ -2383,11 +3289,25 @@ export namespace Prisma {
      * @example
      * // Get one Post
      * const post = await prisma.post.findFirstOrThrow({
+=======
+    findFirst<T extends HouseFindFirstArgs>(args?: SelectSubset<T, HouseFindFirstArgs<ExtArgs>>): Prisma__HouseClient<$Result.GetResult<Prisma.$HousePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first House that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HouseFindFirstOrThrowArgs} args - Arguments to find a House
+     * @example
+     * // Get one House
+     * const house = await prisma.house.findFirstOrThrow({
+>>>>>>> house
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
+<<<<<<< HEAD
     findFirstOrThrow<T extends PostFindFirstOrThrowArgs>(args?: SelectSubset<T, PostFindFirstOrThrowArgs<ExtArgs>>): Prisma__PostClient<$Result.GetResult<Prisma.$PostPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
@@ -2416,10 +3336,41 @@ export namespace Prisma {
      * const Post = await prisma.post.create({
      *   data: {
      *     // ... data to create a Post
+=======
+    findFirstOrThrow<T extends HouseFindFirstOrThrowArgs>(args?: SelectSubset<T, HouseFindFirstOrThrowArgs<ExtArgs>>): Prisma__HouseClient<$Result.GetResult<Prisma.$HousePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Houses that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HouseFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Houses
+     * const houses = await prisma.house.findMany()
+     * 
+     * // Get first 10 Houses
+     * const houses = await prisma.house.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const houseWithIdOnly = await prisma.house.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends HouseFindManyArgs>(args?: SelectSubset<T, HouseFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HousePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a House.
+     * @param {HouseCreateArgs} args - Arguments to create a House.
+     * @example
+     * // Create one House
+     * const House = await prisma.house.create({
+     *   data: {
+     *     // ... data to create a House
+>>>>>>> house
      *   }
      * })
      * 
      */
+<<<<<<< HEAD
     create<T extends PostCreateArgs>(args: SelectSubset<T, PostCreateArgs<ExtArgs>>): Prisma__PostClient<$Result.GetResult<Prisma.$PostPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
@@ -2428,12 +3379,23 @@ export namespace Prisma {
      * @example
      * // Create many Posts
      * const post = await prisma.post.createMany({
+=======
+    create<T extends HouseCreateArgs>(args: SelectSubset<T, HouseCreateArgs<ExtArgs>>): Prisma__HouseClient<$Result.GetResult<Prisma.$HousePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Houses.
+     * @param {HouseCreateManyArgs} args - Arguments to create many Houses.
+     * @example
+     * // Create many Houses
+     * const house = await prisma.house.createMany({
+>>>>>>> house
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
+<<<<<<< HEAD
     createMany<T extends PostCreateManyArgs>(args?: SelectSubset<T, PostCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
@@ -2442,13 +3404,28 @@ export namespace Prisma {
      * @example
      * // Create many Posts
      * const post = await prisma.post.createManyAndReturn({
+=======
+    createMany<T extends HouseCreateManyArgs>(args?: SelectSubset<T, HouseCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Houses and returns the data saved in the database.
+     * @param {HouseCreateManyAndReturnArgs} args - Arguments to create many Houses.
+     * @example
+     * // Create many Houses
+     * const house = await prisma.house.createManyAndReturn({
+>>>>>>> house
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
+<<<<<<< HEAD
      * // Create many Posts and only return the `id`
      * const postWithIdOnly = await prisma.post.createManyAndReturn({
+=======
+     * // Create many Houses and only return the `id`
+     * const houseWithIdOnly = await prisma.house.createManyAndReturn({
+>>>>>>> house
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -2458,6 +3435,7 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
+<<<<<<< HEAD
     createManyAndReturn<T extends PostCreateManyAndReturnArgs>(args?: SelectSubset<T, PostCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PostPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
@@ -2468,10 +3446,23 @@ export namespace Prisma {
      * const Post = await prisma.post.delete({
      *   where: {
      *     // ... filter to delete one Post
+=======
+    createManyAndReturn<T extends HouseCreateManyAndReturnArgs>(args?: SelectSubset<T, HouseCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HousePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a House.
+     * @param {HouseDeleteArgs} args - Arguments to delete one House.
+     * @example
+     * // Delete one House
+     * const House = await prisma.house.delete({
+     *   where: {
+     *     // ... filter to delete one House
+>>>>>>> house
      *   }
      * })
      * 
      */
+<<<<<<< HEAD
     delete<T extends PostDeleteArgs>(args: SelectSubset<T, PostDeleteArgs<ExtArgs>>): Prisma__PostClient<$Result.GetResult<Prisma.$PostPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
@@ -2480,6 +3471,16 @@ export namespace Prisma {
      * @example
      * // Update one Post
      * const post = await prisma.post.update({
+=======
+    delete<T extends HouseDeleteArgs>(args: SelectSubset<T, HouseDeleteArgs<ExtArgs>>): Prisma__HouseClient<$Result.GetResult<Prisma.$HousePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one House.
+     * @param {HouseUpdateArgs} args - Arguments to update one House.
+     * @example
+     * // Update one House
+     * const house = await prisma.house.update({
+>>>>>>> house
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2489,6 +3490,7 @@ export namespace Prisma {
      * })
      * 
      */
+<<<<<<< HEAD
     update<T extends PostUpdateArgs>(args: SelectSubset<T, PostUpdateArgs<ExtArgs>>): Prisma__PostClient<$Result.GetResult<Prisma.$PostPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
@@ -2497,12 +3499,23 @@ export namespace Prisma {
      * @example
      * // Delete a few Posts
      * const { count } = await prisma.post.deleteMany({
+=======
+    update<T extends HouseUpdateArgs>(args: SelectSubset<T, HouseUpdateArgs<ExtArgs>>): Prisma__HouseClient<$Result.GetResult<Prisma.$HousePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Houses.
+     * @param {HouseDeleteManyArgs} args - Arguments to filter Houses to delete.
+     * @example
+     * // Delete a few Houses
+     * const { count } = await prisma.house.deleteMany({
+>>>>>>> house
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
+<<<<<<< HEAD
     deleteMany<T extends PostDeleteManyArgs>(args?: SelectSubset<T, PostDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
@@ -2513,6 +3526,18 @@ export namespace Prisma {
      * @example
      * // Update many Posts
      * const post = await prisma.post.updateMany({
+=======
+    deleteMany<T extends HouseDeleteManyArgs>(args?: SelectSubset<T, HouseDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Houses.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HouseUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Houses
+     * const house = await prisma.house.updateMany({
+>>>>>>> house
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2522,6 +3547,7 @@ export namespace Prisma {
      * })
      * 
      */
+<<<<<<< HEAD
     updateMany<T extends PostUpdateManyArgs>(args: SelectSubset<T, PostUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
@@ -2530,6 +3556,16 @@ export namespace Prisma {
      * @example
      * // Update many Posts
      * const post = await prisma.post.updateManyAndReturn({
+=======
+    updateMany<T extends HouseUpdateManyArgs>(args: SelectSubset<T, HouseUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Houses and returns the data updated in the database.
+     * @param {HouseUpdateManyAndReturnArgs} args - Arguments to update many Houses.
+     * @example
+     * // Update many Houses
+     * const house = await prisma.house.updateManyAndReturn({
+>>>>>>> house
      *   where: {
      *     // ... provide filter here
      *   },
@@ -2538,8 +3574,13 @@ export namespace Prisma {
      *   ]
      * })
      * 
+<<<<<<< HEAD
      * // Update zero or more Posts and only return the `id`
      * const postWithIdOnly = await prisma.post.updateManyAndReturn({
+=======
+     * // Update zero or more Houses and only return the `id`
+     * const houseWithIdOnly = await prisma.house.updateManyAndReturn({
+>>>>>>> house
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -2552,6 +3593,7 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
+<<<<<<< HEAD
     updateManyAndReturn<T extends PostUpdateManyAndReturnArgs>(args: SelectSubset<T, PostUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PostPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
@@ -2562,11 +3604,24 @@ export namespace Prisma {
      * const post = await prisma.post.upsert({
      *   create: {
      *     // ... data to create a Post
+=======
+    updateManyAndReturn<T extends HouseUpdateManyAndReturnArgs>(args: SelectSubset<T, HouseUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$HousePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one House.
+     * @param {HouseUpsertArgs} args - Arguments to update or create a House.
+     * @example
+     * // Update or create a House
+     * const house = await prisma.house.upsert({
+     *   create: {
+     *     // ... data to create a House
+>>>>>>> house
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
+<<<<<<< HEAD
      *     // ... the filter for the Post we want to update
      *   }
      * })
@@ -2589,19 +3644,54 @@ export namespace Prisma {
     **/
     count<T extends PostCountArgs>(
       args?: Subset<T, PostCountArgs>,
+=======
+     *     // ... the filter for the House we want to update
+     *   }
+     * })
+     */
+    upsert<T extends HouseUpsertArgs>(args: SelectSubset<T, HouseUpsertArgs<ExtArgs>>): Prisma__HouseClient<$Result.GetResult<Prisma.$HousePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Houses.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HouseCountArgs} args - Arguments to filter Houses to count.
+     * @example
+     * // Count the number of Houses
+     * const count = await prisma.house.count({
+     *   where: {
+     *     // ... the filter for the Houses we want to count
+     *   }
+     * })
+    **/
+    count<T extends HouseCountArgs>(
+      args?: Subset<T, HouseCountArgs>,
+>>>>>>> house
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
+<<<<<<< HEAD
           : GetScalarType<T['select'], PostCountAggregateOutputType>
+=======
+          : GetScalarType<T['select'], HouseCountAggregateOutputType>
+>>>>>>> house
         : number
     >
 
     /**
+<<<<<<< HEAD
      * Allows you to perform aggregations operations on a Post.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
      * @param {PostAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+=======
+     * Allows you to perform aggregations operations on a House.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HouseAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+>>>>>>> house
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -2621,6 +3711,7 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
+<<<<<<< HEAD
     aggregate<T extends PostAggregateArgs>(args: Subset<T, PostAggregateArgs>): Prisma.PrismaPromise<GetPostAggregateType<T>>
 
     /**
@@ -2628,6 +3719,15 @@ export namespace Prisma {
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
      * @param {PostGroupByArgs} args - Group by arguments.
+=======
+    aggregate<T extends HouseAggregateArgs>(args: Subset<T, HouseAggregateArgs>): Prisma.PrismaPromise<GetHouseAggregateType<T>>
+
+    /**
+     * Group by House.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {HouseGroupByArgs} args - Group by arguments.
+>>>>>>> house
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -2642,14 +3742,23 @@ export namespace Prisma {
      * 
     **/
     groupBy<
+<<<<<<< HEAD
       T extends PostGroupByArgs,
+=======
+      T extends HouseGroupByArgs,
+>>>>>>> house
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
+<<<<<<< HEAD
         ? { orderBy: PostGroupByArgs['orderBy'] }
         : { orderBy?: PostGroupByArgs['orderBy'] },
+=======
+        ? { orderBy: HouseGroupByArgs['orderBy'] }
+        : { orderBy?: HouseGroupByArgs['orderBy'] },
+>>>>>>> house
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -2698,6 +3807,7 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
+<<<<<<< HEAD
     >(args: SubsetIntersection<T, PostGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPostGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
    * Fields of the Post model
@@ -2707,13 +3817,31 @@ export namespace Prisma {
 
   /**
    * The delegate class that acts as a "Promise-like" for Post.
+=======
+    >(args: SubsetIntersection<T, HouseGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetHouseGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the House model
+   */
+  readonly fields: HouseFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for House.
+>>>>>>> house
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
+<<<<<<< HEAD
   export interface Prisma__PostClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     author<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+=======
+  export interface Prisma__HouseClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    savedBy<T extends House$savedByArgs<ExtArgs> = {}>(args?: Subset<T, House$savedByArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    viewedBy<T extends House$viewedByArgs<ExtArgs> = {}>(args?: Subset<T, House$viewedByArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+>>>>>>> house
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2740,6 +3868,7 @@ export namespace Prisma {
 
 
   /**
+<<<<<<< HEAD
    * Fields of the Post model
    */ 
   interface PostFieldRefs {
@@ -2748,11 +3877,46 @@ export namespace Prisma {
     readonly content: FieldRef<"Post", 'String'>
     readonly published: FieldRef<"Post", 'Boolean'>
     readonly authorId: FieldRef<"Post", 'Int'>
+=======
+   * Fields of the House model
+   */ 
+  interface HouseFieldRefs {
+    readonly id: FieldRef<"House", 'Int'>
+    readonly name: FieldRef<"House", 'String'>
+    readonly address: FieldRef<"House", 'String'>
+    readonly bathrooms: FieldRef<"House", 'Float'>
+    readonly bedrooms: FieldRef<"House", 'Int'>
+    readonly price: FieldRef<"House", 'Float'>
+    readonly contact: FieldRef<"House", 'String'>
+    readonly amenities: FieldRef<"House", 'String'>
+    readonly image: FieldRef<"House", 'String'>
+    readonly schoolDistance: FieldRef<"House", 'Float'>
+    readonly schoolWalkTime: FieldRef<"House", 'Float'>
+    readonly groceryDistance: FieldRef<"House", 'Float'>
+    readonly groceryWalkTime: FieldRef<"House", 'Float'>
+    readonly groceryStore: FieldRef<"House", 'String'>
+    readonly groceryAdress: FieldRef<"House", 'String'>
+    readonly pharmacyDistance: FieldRef<"House", 'Float'>
+    readonly pharmacyWalkTime: FieldRef<"House", 'Float'>
+    readonly pharmacyStore: FieldRef<"House", 'String'>
+    readonly pharmacyAdress: FieldRef<"House", 'String'>
+    readonly downtownDistance: FieldRef<"House", 'Float'>
+    readonly downtownWalkTime: FieldRef<"House", 'Float'>
+    readonly shuttle: FieldRef<"House", 'Boolean'>
+    readonly legitimate: FieldRef<"House", 'Boolean'>
+    readonly laundry: FieldRef<"House", 'Boolean'>
+    readonly parking: FieldRef<"House", 'Boolean'>
+    readonly ac: FieldRef<"House", 'Boolean'>
+    readonly pet: FieldRef<"House", 'Boolean'>
+    readonly dishwasher: FieldRef<"House", 'Boolean'>
+    readonly cluster: FieldRef<"House", 'Int'>
+>>>>>>> house
   }
     
 
   // Custom InputTypes
   /**
+<<<<<<< HEAD
    * Post findUnique
    */
   export type PostFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -2832,17 +3996,103 @@ export namespace Prisma {
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
      * Take `±n` Posts from the position of the cursor.
+=======
+   * House findUnique
+   */
+  export type HouseFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the House
+     */
+    select?: HouseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the House
+     */
+    omit?: HouseOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HouseInclude<ExtArgs> | null
+    /**
+     * Filter, which House to fetch.
+     */
+    where: HouseWhereUniqueInput
+  }
+
+  /**
+   * House findUniqueOrThrow
+   */
+  export type HouseFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the House
+     */
+    select?: HouseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the House
+     */
+    omit?: HouseOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HouseInclude<ExtArgs> | null
+    /**
+     * Filter, which House to fetch.
+     */
+    where: HouseWhereUniqueInput
+  }
+
+  /**
+   * House findFirst
+   */
+  export type HouseFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the House
+     */
+    select?: HouseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the House
+     */
+    omit?: HouseOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HouseInclude<ExtArgs> | null
+    /**
+     * Filter, which House to fetch.
+     */
+    where?: HouseWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Houses to fetch.
+     */
+    orderBy?: HouseOrderByWithRelationInput | HouseOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Houses.
+     */
+    cursor?: HouseWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Houses from the position of the cursor.
+>>>>>>> house
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
+<<<<<<< HEAD
      * Skip the first `n` Posts.
+=======
+     * Skip the first `n` Houses.
+>>>>>>> house
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
+<<<<<<< HEAD
      * Filter by unique combinations of Posts.
      */
     distinct?: PostScalarFieldEnum | PostScalarFieldEnum[]
@@ -2884,17 +4134,65 @@ export namespace Prisma {
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
      * Take `±n` Posts from the position of the cursor.
+=======
+     * Filter by unique combinations of Houses.
+     */
+    distinct?: HouseScalarFieldEnum | HouseScalarFieldEnum[]
+  }
+
+  /**
+   * House findFirstOrThrow
+   */
+  export type HouseFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the House
+     */
+    select?: HouseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the House
+     */
+    omit?: HouseOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HouseInclude<ExtArgs> | null
+    /**
+     * Filter, which House to fetch.
+     */
+    where?: HouseWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Houses to fetch.
+     */
+    orderBy?: HouseOrderByWithRelationInput | HouseOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Houses.
+     */
+    cursor?: HouseWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Houses from the position of the cursor.
+>>>>>>> house
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
+<<<<<<< HEAD
      * Skip the first `n` Posts.
+=======
+     * Skip the first `n` Houses.
+>>>>>>> house
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
+<<<<<<< HEAD
      * Filter by unique combinations of Posts.
      */
     distinct?: PostScalarFieldEnum | PostScalarFieldEnum[]
@@ -2936,11 +4234,55 @@ export namespace Prisma {
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
      * Take `±n` Posts from the position of the cursor.
+=======
+     * Filter by unique combinations of Houses.
+     */
+    distinct?: HouseScalarFieldEnum | HouseScalarFieldEnum[]
+  }
+
+  /**
+   * House findMany
+   */
+  export type HouseFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the House
+     */
+    select?: HouseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the House
+     */
+    omit?: HouseOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HouseInclude<ExtArgs> | null
+    /**
+     * Filter, which Houses to fetch.
+     */
+    where?: HouseWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Houses to fetch.
+     */
+    orderBy?: HouseOrderByWithRelationInput | HouseOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Houses.
+     */
+    cursor?: HouseWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Houses from the position of the cursor.
+>>>>>>> house
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
+<<<<<<< HEAD
      * Skip the first `n` Posts.
      */
     skip?: number
@@ -3041,11 +4383,110 @@ export namespace Prisma {
     where?: PostWhereInput
     /**
      * Limit how many Posts to update.
+=======
+     * Skip the first `n` Houses.
+     */
+    skip?: number
+    distinct?: HouseScalarFieldEnum | HouseScalarFieldEnum[]
+  }
+
+  /**
+   * House create
+   */
+  export type HouseCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the House
+     */
+    select?: HouseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the House
+     */
+    omit?: HouseOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HouseInclude<ExtArgs> | null
+    /**
+     * The data needed to create a House.
+     */
+    data?: XOR<HouseCreateInput, HouseUncheckedCreateInput>
+  }
+
+  /**
+   * House createMany
+   */
+  export type HouseCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Houses.
+     */
+    data: HouseCreateManyInput | HouseCreateManyInput[]
+  }
+
+  /**
+   * House createManyAndReturn
+   */
+  export type HouseCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the House
+     */
+    select?: HouseSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the House
+     */
+    omit?: HouseOmit<ExtArgs> | null
+    /**
+     * The data used to create many Houses.
+     */
+    data: HouseCreateManyInput | HouseCreateManyInput[]
+  }
+
+  /**
+   * House update
+   */
+  export type HouseUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the House
+     */
+    select?: HouseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the House
+     */
+    omit?: HouseOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HouseInclude<ExtArgs> | null
+    /**
+     * The data needed to update a House.
+     */
+    data: XOR<HouseUpdateInput, HouseUncheckedUpdateInput>
+    /**
+     * Choose, which House to update.
+     */
+    where: HouseWhereUniqueInput
+  }
+
+  /**
+   * House updateMany
+   */
+  export type HouseUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Houses.
+     */
+    data: XOR<HouseUpdateManyMutationInput, HouseUncheckedUpdateManyInput>
+    /**
+     * Filter which Houses to update
+     */
+    where?: HouseWhereInput
+    /**
+     * Limit how many Houses to update.
+>>>>>>> house
      */
     limit?: number
   }
 
   /**
+<<<<<<< HEAD
    * Post updateManyAndReturn
    */
   export type PostUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -3137,11 +4578,35 @@ export namespace Prisma {
     where?: PostWhereInput
     /**
      * Limit how many Posts to delete.
+=======
+   * House updateManyAndReturn
+   */
+  export type HouseUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the House
+     */
+    select?: HouseSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the House
+     */
+    omit?: HouseOmit<ExtArgs> | null
+    /**
+     * The data used to update Houses.
+     */
+    data: XOR<HouseUpdateManyMutationInput, HouseUncheckedUpdateManyInput>
+    /**
+     * Filter which Houses to update
+     */
+    where?: HouseWhereInput
+    /**
+     * Limit how many Houses to update.
+>>>>>>> house
      */
     limit?: number
   }
 
   /**
+<<<<<<< HEAD
    * Post without action
    */
   export type PostDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -3157,6 +4622,137 @@ export namespace Prisma {
      * Choose, which related nodes to fetch as well
      */
     include?: PostInclude<ExtArgs> | null
+=======
+   * House upsert
+   */
+  export type HouseUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the House
+     */
+    select?: HouseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the House
+     */
+    omit?: HouseOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HouseInclude<ExtArgs> | null
+    /**
+     * The filter to search for the House to update in case it exists.
+     */
+    where: HouseWhereUniqueInput
+    /**
+     * In case the House found by the `where` argument doesn't exist, create a new House with this data.
+     */
+    create: XOR<HouseCreateInput, HouseUncheckedCreateInput>
+    /**
+     * In case the House was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<HouseUpdateInput, HouseUncheckedUpdateInput>
+  }
+
+  /**
+   * House delete
+   */
+  export type HouseDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the House
+     */
+    select?: HouseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the House
+     */
+    omit?: HouseOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HouseInclude<ExtArgs> | null
+    /**
+     * Filter which House to delete.
+     */
+    where: HouseWhereUniqueInput
+  }
+
+  /**
+   * House deleteMany
+   */
+  export type HouseDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Houses to delete
+     */
+    where?: HouseWhereInput
+    /**
+     * Limit how many Houses to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * House.savedBy
+   */
+  export type House$savedByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the User
+     */
+    select?: UserSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the User
+     */
+    omit?: UserOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInclude<ExtArgs> | null
+    where?: UserWhereInput
+    orderBy?: UserOrderByWithRelationInput | UserOrderByWithRelationInput[]
+    cursor?: UserWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: UserScalarFieldEnum | UserScalarFieldEnum[]
+  }
+
+  /**
+   * House.viewedBy
+   */
+  export type House$viewedByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the User
+     */
+    select?: UserSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the User
+     */
+    omit?: UserOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: UserInclude<ExtArgs> | null
+    where?: UserWhereInput
+    orderBy?: UserOrderByWithRelationInput | UserOrderByWithRelationInput[]
+    cursor?: UserWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: UserScalarFieldEnum | UserScalarFieldEnum[]
+  }
+
+  /**
+   * House without action
+   */
+  export type HouseDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the House
+     */
+    select?: HouseSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the House
+     */
+    omit?: HouseOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: HouseInclude<ExtArgs> | null
+>>>>>>> house
   }
 
 
@@ -3173,13 +4769,18 @@ export namespace Prisma {
 
   export const UserScalarFieldEnum: {
     id: 'id',
+<<<<<<< HEAD
     email: 'email',
     name: 'name'
+=======
+    email: 'email'
+>>>>>>> house
   };
 
   export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
+<<<<<<< HEAD
   export const PostScalarFieldEnum: {
     id: 'id',
     title: 'title',
@@ -3189,6 +4790,41 @@ export namespace Prisma {
   };
 
   export type PostScalarFieldEnum = (typeof PostScalarFieldEnum)[keyof typeof PostScalarFieldEnum]
+=======
+  export const HouseScalarFieldEnum: {
+    id: 'id',
+    name: 'name',
+    address: 'address',
+    bathrooms: 'bathrooms',
+    bedrooms: 'bedrooms',
+    price: 'price',
+    contact: 'contact',
+    amenities: 'amenities',
+    image: 'image',
+    schoolDistance: 'schoolDistance',
+    schoolWalkTime: 'schoolWalkTime',
+    groceryDistance: 'groceryDistance',
+    groceryWalkTime: 'groceryWalkTime',
+    groceryStore: 'groceryStore',
+    groceryAdress: 'groceryAdress',
+    pharmacyDistance: 'pharmacyDistance',
+    pharmacyWalkTime: 'pharmacyWalkTime',
+    pharmacyStore: 'pharmacyStore',
+    pharmacyAdress: 'pharmacyAdress',
+    downtownDistance: 'downtownDistance',
+    downtownWalkTime: 'downtownWalkTime',
+    shuttle: 'shuttle',
+    legitimate: 'legitimate',
+    laundry: 'laundry',
+    parking: 'parking',
+    ac: 'ac',
+    pet: 'pet',
+    dishwasher: 'dishwasher',
+    cluster: 'cluster'
+  };
+
+  export type HouseScalarFieldEnum = (typeof HouseScalarFieldEnum)[keyof typeof HouseScalarFieldEnum]
+>>>>>>> house
 
 
   export const SortOrder: {
@@ -3213,6 +4849,7 @@ export namespace Prisma {
 
 
   /**
+<<<<<<< HEAD
    * Reference to a field of type 'Int'
    */
   export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
@@ -3220,6 +4857,8 @@ export namespace Prisma {
 
 
   /**
+=======
+>>>>>>> house
    * Reference to a field of type 'String'
    */
   export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
@@ -3227,9 +4866,15 @@ export namespace Prisma {
 
 
   /**
+<<<<<<< HEAD
    * Reference to a field of type 'Boolean'
    */
   export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+=======
+   * Reference to a field of type 'Int'
+   */
+  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
+>>>>>>> house
     
 
 
@@ -3238,6 +4883,16 @@ export namespace Prisma {
    */
   export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
     
+<<<<<<< HEAD
+=======
+
+
+  /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+    
+>>>>>>> house
   /**
    * Deep Input Types
    */
@@ -3247,44 +4902,72 @@ export namespace Prisma {
     AND?: UserWhereInput | UserWhereInput[]
     OR?: UserWhereInput[]
     NOT?: UserWhereInput | UserWhereInput[]
+<<<<<<< HEAD
     id?: IntFilter<"User"> | number
     email?: StringFilter<"User"> | string
     name?: StringNullableFilter<"User"> | string | null
     posts?: PostListRelationFilter
+=======
+    id?: StringFilter<"User"> | string
+    email?: StringFilter<"User"> | string
+    savedHouses?: HouseListRelationFilter
+    viewedHouses?: HouseListRelationFilter
+>>>>>>> house
   }
 
   export type UserOrderByWithRelationInput = {
     id?: SortOrder
     email?: SortOrder
+<<<<<<< HEAD
     name?: SortOrderInput | SortOrder
     posts?: PostOrderByRelationAggregateInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
     id?: number
+=======
+    savedHouses?: HouseOrderByRelationAggregateInput
+    viewedHouses?: HouseOrderByRelationAggregateInput
+  }
+
+  export type UserWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+>>>>>>> house
     email?: string
     AND?: UserWhereInput | UserWhereInput[]
     OR?: UserWhereInput[]
     NOT?: UserWhereInput | UserWhereInput[]
+<<<<<<< HEAD
     name?: StringNullableFilter<"User"> | string | null
     posts?: PostListRelationFilter
+=======
+    savedHouses?: HouseListRelationFilter
+    viewedHouses?: HouseListRelationFilter
+>>>>>>> house
   }, "id" | "email">
 
   export type UserOrderByWithAggregationInput = {
     id?: SortOrder
     email?: SortOrder
+<<<<<<< HEAD
     name?: SortOrderInput | SortOrder
     _count?: UserCountOrderByAggregateInput
     _avg?: UserAvgOrderByAggregateInput
     _max?: UserMaxOrderByAggregateInput
     _min?: UserMinOrderByAggregateInput
     _sum?: UserSumOrderByAggregateInput
+=======
+    _count?: UserCountOrderByAggregateInput
+    _max?: UserMaxOrderByAggregateInput
+    _min?: UserMinOrderByAggregateInput
+>>>>>>> house
   }
 
   export type UserScalarWhereWithAggregatesInput = {
     AND?: UserScalarWhereWithAggregatesInput | UserScalarWhereWithAggregatesInput[]
     OR?: UserScalarWhereWithAggregatesInput[]
     NOT?: UserScalarWhereWithAggregatesInput | UserScalarWhereWithAggregatesInput[]
+<<<<<<< HEAD
     id?: IntWithAggregatesFilter<"User"> | number
     email?: StringWithAggregatesFilter<"User"> | string
     name?: StringNullableWithAggregatesFilter<"User"> | string | null
@@ -3451,6 +5134,462 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntFilter<$PrismaModel> | number
+=======
+    id?: StringWithAggregatesFilter<"User"> | string
+    email?: StringWithAggregatesFilter<"User"> | string
+  }
+
+  export type HouseWhereInput = {
+    AND?: HouseWhereInput | HouseWhereInput[]
+    OR?: HouseWhereInput[]
+    NOT?: HouseWhereInput | HouseWhereInput[]
+    id?: IntFilter<"House"> | number
+    name?: StringNullableFilter<"House"> | string | null
+    address?: StringNullableFilter<"House"> | string | null
+    bathrooms?: FloatNullableFilter<"House"> | number | null
+    bedrooms?: IntNullableFilter<"House"> | number | null
+    price?: FloatNullableFilter<"House"> | number | null
+    contact?: StringNullableFilter<"House"> | string | null
+    amenities?: StringNullableFilter<"House"> | string | null
+    image?: StringNullableFilter<"House"> | string | null
+    schoolDistance?: FloatNullableFilter<"House"> | number | null
+    schoolWalkTime?: FloatNullableFilter<"House"> | number | null
+    groceryDistance?: FloatNullableFilter<"House"> | number | null
+    groceryWalkTime?: FloatNullableFilter<"House"> | number | null
+    groceryStore?: StringNullableFilter<"House"> | string | null
+    groceryAdress?: StringNullableFilter<"House"> | string | null
+    pharmacyDistance?: FloatNullableFilter<"House"> | number | null
+    pharmacyWalkTime?: FloatNullableFilter<"House"> | number | null
+    pharmacyStore?: StringNullableFilter<"House"> | string | null
+    pharmacyAdress?: StringNullableFilter<"House"> | string | null
+    downtownDistance?: FloatNullableFilter<"House"> | number | null
+    downtownWalkTime?: FloatNullableFilter<"House"> | number | null
+    shuttle?: BoolNullableFilter<"House"> | boolean | null
+    legitimate?: BoolNullableFilter<"House"> | boolean | null
+    laundry?: BoolNullableFilter<"House"> | boolean | null
+    parking?: BoolNullableFilter<"House"> | boolean | null
+    ac?: BoolNullableFilter<"House"> | boolean | null
+    pet?: BoolNullableFilter<"House"> | boolean | null
+    dishwasher?: BoolNullableFilter<"House"> | boolean | null
+    cluster?: IntNullableFilter<"House"> | number | null
+    savedBy?: UserListRelationFilter
+    viewedBy?: UserListRelationFilter
+  }
+
+  export type HouseOrderByWithRelationInput = {
+    id?: SortOrder
+    name?: SortOrderInput | SortOrder
+    address?: SortOrderInput | SortOrder
+    bathrooms?: SortOrderInput | SortOrder
+    bedrooms?: SortOrderInput | SortOrder
+    price?: SortOrderInput | SortOrder
+    contact?: SortOrderInput | SortOrder
+    amenities?: SortOrderInput | SortOrder
+    image?: SortOrderInput | SortOrder
+    schoolDistance?: SortOrderInput | SortOrder
+    schoolWalkTime?: SortOrderInput | SortOrder
+    groceryDistance?: SortOrderInput | SortOrder
+    groceryWalkTime?: SortOrderInput | SortOrder
+    groceryStore?: SortOrderInput | SortOrder
+    groceryAdress?: SortOrderInput | SortOrder
+    pharmacyDistance?: SortOrderInput | SortOrder
+    pharmacyWalkTime?: SortOrderInput | SortOrder
+    pharmacyStore?: SortOrderInput | SortOrder
+    pharmacyAdress?: SortOrderInput | SortOrder
+    downtownDistance?: SortOrderInput | SortOrder
+    downtownWalkTime?: SortOrderInput | SortOrder
+    shuttle?: SortOrderInput | SortOrder
+    legitimate?: SortOrderInput | SortOrder
+    laundry?: SortOrderInput | SortOrder
+    parking?: SortOrderInput | SortOrder
+    ac?: SortOrderInput | SortOrder
+    pet?: SortOrderInput | SortOrder
+    dishwasher?: SortOrderInput | SortOrder
+    cluster?: SortOrderInput | SortOrder
+    savedBy?: UserOrderByRelationAggregateInput
+    viewedBy?: UserOrderByRelationAggregateInput
+  }
+
+  export type HouseWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: HouseWhereInput | HouseWhereInput[]
+    OR?: HouseWhereInput[]
+    NOT?: HouseWhereInput | HouseWhereInput[]
+    name?: StringNullableFilter<"House"> | string | null
+    address?: StringNullableFilter<"House"> | string | null
+    bathrooms?: FloatNullableFilter<"House"> | number | null
+    bedrooms?: IntNullableFilter<"House"> | number | null
+    price?: FloatNullableFilter<"House"> | number | null
+    contact?: StringNullableFilter<"House"> | string | null
+    amenities?: StringNullableFilter<"House"> | string | null
+    image?: StringNullableFilter<"House"> | string | null
+    schoolDistance?: FloatNullableFilter<"House"> | number | null
+    schoolWalkTime?: FloatNullableFilter<"House"> | number | null
+    groceryDistance?: FloatNullableFilter<"House"> | number | null
+    groceryWalkTime?: FloatNullableFilter<"House"> | number | null
+    groceryStore?: StringNullableFilter<"House"> | string | null
+    groceryAdress?: StringNullableFilter<"House"> | string | null
+    pharmacyDistance?: FloatNullableFilter<"House"> | number | null
+    pharmacyWalkTime?: FloatNullableFilter<"House"> | number | null
+    pharmacyStore?: StringNullableFilter<"House"> | string | null
+    pharmacyAdress?: StringNullableFilter<"House"> | string | null
+    downtownDistance?: FloatNullableFilter<"House"> | number | null
+    downtownWalkTime?: FloatNullableFilter<"House"> | number | null
+    shuttle?: BoolNullableFilter<"House"> | boolean | null
+    legitimate?: BoolNullableFilter<"House"> | boolean | null
+    laundry?: BoolNullableFilter<"House"> | boolean | null
+    parking?: BoolNullableFilter<"House"> | boolean | null
+    ac?: BoolNullableFilter<"House"> | boolean | null
+    pet?: BoolNullableFilter<"House"> | boolean | null
+    dishwasher?: BoolNullableFilter<"House"> | boolean | null
+    cluster?: IntNullableFilter<"House"> | number | null
+    savedBy?: UserListRelationFilter
+    viewedBy?: UserListRelationFilter
+  }, "id">
+
+  export type HouseOrderByWithAggregationInput = {
+    id?: SortOrder
+    name?: SortOrderInput | SortOrder
+    address?: SortOrderInput | SortOrder
+    bathrooms?: SortOrderInput | SortOrder
+    bedrooms?: SortOrderInput | SortOrder
+    price?: SortOrderInput | SortOrder
+    contact?: SortOrderInput | SortOrder
+    amenities?: SortOrderInput | SortOrder
+    image?: SortOrderInput | SortOrder
+    schoolDistance?: SortOrderInput | SortOrder
+    schoolWalkTime?: SortOrderInput | SortOrder
+    groceryDistance?: SortOrderInput | SortOrder
+    groceryWalkTime?: SortOrderInput | SortOrder
+    groceryStore?: SortOrderInput | SortOrder
+    groceryAdress?: SortOrderInput | SortOrder
+    pharmacyDistance?: SortOrderInput | SortOrder
+    pharmacyWalkTime?: SortOrderInput | SortOrder
+    pharmacyStore?: SortOrderInput | SortOrder
+    pharmacyAdress?: SortOrderInput | SortOrder
+    downtownDistance?: SortOrderInput | SortOrder
+    downtownWalkTime?: SortOrderInput | SortOrder
+    shuttle?: SortOrderInput | SortOrder
+    legitimate?: SortOrderInput | SortOrder
+    laundry?: SortOrderInput | SortOrder
+    parking?: SortOrderInput | SortOrder
+    ac?: SortOrderInput | SortOrder
+    pet?: SortOrderInput | SortOrder
+    dishwasher?: SortOrderInput | SortOrder
+    cluster?: SortOrderInput | SortOrder
+    _count?: HouseCountOrderByAggregateInput
+    _avg?: HouseAvgOrderByAggregateInput
+    _max?: HouseMaxOrderByAggregateInput
+    _min?: HouseMinOrderByAggregateInput
+    _sum?: HouseSumOrderByAggregateInput
+  }
+
+  export type HouseScalarWhereWithAggregatesInput = {
+    AND?: HouseScalarWhereWithAggregatesInput | HouseScalarWhereWithAggregatesInput[]
+    OR?: HouseScalarWhereWithAggregatesInput[]
+    NOT?: HouseScalarWhereWithAggregatesInput | HouseScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"House"> | number
+    name?: StringNullableWithAggregatesFilter<"House"> | string | null
+    address?: StringNullableWithAggregatesFilter<"House"> | string | null
+    bathrooms?: FloatNullableWithAggregatesFilter<"House"> | number | null
+    bedrooms?: IntNullableWithAggregatesFilter<"House"> | number | null
+    price?: FloatNullableWithAggregatesFilter<"House"> | number | null
+    contact?: StringNullableWithAggregatesFilter<"House"> | string | null
+    amenities?: StringNullableWithAggregatesFilter<"House"> | string | null
+    image?: StringNullableWithAggregatesFilter<"House"> | string | null
+    schoolDistance?: FloatNullableWithAggregatesFilter<"House"> | number | null
+    schoolWalkTime?: FloatNullableWithAggregatesFilter<"House"> | number | null
+    groceryDistance?: FloatNullableWithAggregatesFilter<"House"> | number | null
+    groceryWalkTime?: FloatNullableWithAggregatesFilter<"House"> | number | null
+    groceryStore?: StringNullableWithAggregatesFilter<"House"> | string | null
+    groceryAdress?: StringNullableWithAggregatesFilter<"House"> | string | null
+    pharmacyDistance?: FloatNullableWithAggregatesFilter<"House"> | number | null
+    pharmacyWalkTime?: FloatNullableWithAggregatesFilter<"House"> | number | null
+    pharmacyStore?: StringNullableWithAggregatesFilter<"House"> | string | null
+    pharmacyAdress?: StringNullableWithAggregatesFilter<"House"> | string | null
+    downtownDistance?: FloatNullableWithAggregatesFilter<"House"> | number | null
+    downtownWalkTime?: FloatNullableWithAggregatesFilter<"House"> | number | null
+    shuttle?: BoolNullableWithAggregatesFilter<"House"> | boolean | null
+    legitimate?: BoolNullableWithAggregatesFilter<"House"> | boolean | null
+    laundry?: BoolNullableWithAggregatesFilter<"House"> | boolean | null
+    parking?: BoolNullableWithAggregatesFilter<"House"> | boolean | null
+    ac?: BoolNullableWithAggregatesFilter<"House"> | boolean | null
+    pet?: BoolNullableWithAggregatesFilter<"House"> | boolean | null
+    dishwasher?: BoolNullableWithAggregatesFilter<"House"> | boolean | null
+    cluster?: IntNullableWithAggregatesFilter<"House"> | number | null
+  }
+
+  export type UserCreateInput = {
+    id: string
+    email: string
+    savedHouses?: HouseCreateNestedManyWithoutSavedByInput
+    viewedHouses?: HouseCreateNestedManyWithoutViewedByInput
+  }
+
+  export type UserUncheckedCreateInput = {
+    id: string
+    email: string
+    savedHouses?: HouseUncheckedCreateNestedManyWithoutSavedByInput
+    viewedHouses?: HouseUncheckedCreateNestedManyWithoutViewedByInput
+  }
+
+  export type UserUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    savedHouses?: HouseUpdateManyWithoutSavedByNestedInput
+    viewedHouses?: HouseUpdateManyWithoutViewedByNestedInput
+  }
+
+  export type UserUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    savedHouses?: HouseUncheckedUpdateManyWithoutSavedByNestedInput
+    viewedHouses?: HouseUncheckedUpdateManyWithoutViewedByNestedInput
+  }
+
+  export type UserCreateManyInput = {
+    id: string
+    email: string
+  }
+
+  export type UserUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type UserUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type HouseCreateInput = {
+    name?: string | null
+    address?: string | null
+    bathrooms?: number | null
+    bedrooms?: number | null
+    price?: number | null
+    contact?: string | null
+    amenities?: string | null
+    image?: string | null
+    schoolDistance?: number | null
+    schoolWalkTime?: number | null
+    groceryDistance?: number | null
+    groceryWalkTime?: number | null
+    groceryStore?: string | null
+    groceryAdress?: string | null
+    pharmacyDistance?: number | null
+    pharmacyWalkTime?: number | null
+    pharmacyStore?: string | null
+    pharmacyAdress?: string | null
+    downtownDistance?: number | null
+    downtownWalkTime?: number | null
+    shuttle?: boolean | null
+    legitimate?: boolean | null
+    laundry?: boolean | null
+    parking?: boolean | null
+    ac?: boolean | null
+    pet?: boolean | null
+    dishwasher?: boolean | null
+    cluster?: number | null
+    savedBy?: UserCreateNestedManyWithoutSavedHousesInput
+    viewedBy?: UserCreateNestedManyWithoutViewedHousesInput
+  }
+
+  export type HouseUncheckedCreateInput = {
+    id?: number
+    name?: string | null
+    address?: string | null
+    bathrooms?: number | null
+    bedrooms?: number | null
+    price?: number | null
+    contact?: string | null
+    amenities?: string | null
+    image?: string | null
+    schoolDistance?: number | null
+    schoolWalkTime?: number | null
+    groceryDistance?: number | null
+    groceryWalkTime?: number | null
+    groceryStore?: string | null
+    groceryAdress?: string | null
+    pharmacyDistance?: number | null
+    pharmacyWalkTime?: number | null
+    pharmacyStore?: string | null
+    pharmacyAdress?: string | null
+    downtownDistance?: number | null
+    downtownWalkTime?: number | null
+    shuttle?: boolean | null
+    legitimate?: boolean | null
+    laundry?: boolean | null
+    parking?: boolean | null
+    ac?: boolean | null
+    pet?: boolean | null
+    dishwasher?: boolean | null
+    cluster?: number | null
+    savedBy?: UserUncheckedCreateNestedManyWithoutSavedHousesInput
+    viewedBy?: UserUncheckedCreateNestedManyWithoutViewedHousesInput
+  }
+
+  export type HouseUpdateInput = {
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    bathrooms?: NullableFloatFieldUpdateOperationsInput | number | null
+    bedrooms?: NullableIntFieldUpdateOperationsInput | number | null
+    price?: NullableFloatFieldUpdateOperationsInput | number | null
+    contact?: NullableStringFieldUpdateOperationsInput | string | null
+    amenities?: NullableStringFieldUpdateOperationsInput | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    schoolDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    schoolWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryStore?: NullableStringFieldUpdateOperationsInput | string | null
+    groceryAdress?: NullableStringFieldUpdateOperationsInput | string | null
+    pharmacyDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    pharmacyWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    pharmacyStore?: NullableStringFieldUpdateOperationsInput | string | null
+    pharmacyAdress?: NullableStringFieldUpdateOperationsInput | string | null
+    downtownDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    downtownWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    shuttle?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    legitimate?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    laundry?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    parking?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ac?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    pet?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    dishwasher?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    cluster?: NullableIntFieldUpdateOperationsInput | number | null
+    savedBy?: UserUpdateManyWithoutSavedHousesNestedInput
+    viewedBy?: UserUpdateManyWithoutViewedHousesNestedInput
+  }
+
+  export type HouseUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    bathrooms?: NullableFloatFieldUpdateOperationsInput | number | null
+    bedrooms?: NullableIntFieldUpdateOperationsInput | number | null
+    price?: NullableFloatFieldUpdateOperationsInput | number | null
+    contact?: NullableStringFieldUpdateOperationsInput | string | null
+    amenities?: NullableStringFieldUpdateOperationsInput | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    schoolDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    schoolWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryStore?: NullableStringFieldUpdateOperationsInput | string | null
+    groceryAdress?: NullableStringFieldUpdateOperationsInput | string | null
+    pharmacyDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    pharmacyWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    pharmacyStore?: NullableStringFieldUpdateOperationsInput | string | null
+    pharmacyAdress?: NullableStringFieldUpdateOperationsInput | string | null
+    downtownDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    downtownWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    shuttle?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    legitimate?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    laundry?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    parking?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ac?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    pet?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    dishwasher?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    cluster?: NullableIntFieldUpdateOperationsInput | number | null
+    savedBy?: UserUncheckedUpdateManyWithoutSavedHousesNestedInput
+    viewedBy?: UserUncheckedUpdateManyWithoutViewedHousesNestedInput
+  }
+
+  export type HouseCreateManyInput = {
+    id?: number
+    name?: string | null
+    address?: string | null
+    bathrooms?: number | null
+    bedrooms?: number | null
+    price?: number | null
+    contact?: string | null
+    amenities?: string | null
+    image?: string | null
+    schoolDistance?: number | null
+    schoolWalkTime?: number | null
+    groceryDistance?: number | null
+    groceryWalkTime?: number | null
+    groceryStore?: string | null
+    groceryAdress?: string | null
+    pharmacyDistance?: number | null
+    pharmacyWalkTime?: number | null
+    pharmacyStore?: string | null
+    pharmacyAdress?: string | null
+    downtownDistance?: number | null
+    downtownWalkTime?: number | null
+    shuttle?: boolean | null
+    legitimate?: boolean | null
+    laundry?: boolean | null
+    parking?: boolean | null
+    ac?: boolean | null
+    pet?: boolean | null
+    dishwasher?: boolean | null
+    cluster?: number | null
+  }
+
+  export type HouseUpdateManyMutationInput = {
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    bathrooms?: NullableFloatFieldUpdateOperationsInput | number | null
+    bedrooms?: NullableIntFieldUpdateOperationsInput | number | null
+    price?: NullableFloatFieldUpdateOperationsInput | number | null
+    contact?: NullableStringFieldUpdateOperationsInput | string | null
+    amenities?: NullableStringFieldUpdateOperationsInput | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    schoolDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    schoolWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryStore?: NullableStringFieldUpdateOperationsInput | string | null
+    groceryAdress?: NullableStringFieldUpdateOperationsInput | string | null
+    pharmacyDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    pharmacyWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    pharmacyStore?: NullableStringFieldUpdateOperationsInput | string | null
+    pharmacyAdress?: NullableStringFieldUpdateOperationsInput | string | null
+    downtownDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    downtownWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    shuttle?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    legitimate?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    laundry?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    parking?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ac?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    pet?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    dishwasher?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    cluster?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type HouseUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    bathrooms?: NullableFloatFieldUpdateOperationsInput | number | null
+    bedrooms?: NullableIntFieldUpdateOperationsInput | number | null
+    price?: NullableFloatFieldUpdateOperationsInput | number | null
+    contact?: NullableStringFieldUpdateOperationsInput | string | null
+    amenities?: NullableStringFieldUpdateOperationsInput | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    schoolDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    schoolWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryStore?: NullableStringFieldUpdateOperationsInput | string | null
+    groceryAdress?: NullableStringFieldUpdateOperationsInput | string | null
+    pharmacyDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    pharmacyWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    pharmacyStore?: NullableStringFieldUpdateOperationsInput | string | null
+    pharmacyAdress?: NullableStringFieldUpdateOperationsInput | string | null
+    downtownDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    downtownWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    shuttle?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    legitimate?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    laundry?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    parking?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ac?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    pet?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    dishwasher?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    cluster?: NullableIntFieldUpdateOperationsInput | number | null
+>>>>>>> house
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -3467,6 +5606,7 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+<<<<<<< HEAD
   export type StringNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | null
@@ -3493,28 +5633,44 @@ export namespace Prisma {
   }
 
   export type PostOrderByRelationAggregateInput = {
+=======
+  export type HouseListRelationFilter = {
+    every?: HouseWhereInput
+    some?: HouseWhereInput
+    none?: HouseWhereInput
+  }
+
+  export type HouseOrderByRelationAggregateInput = {
+>>>>>>> house
     _count?: SortOrder
   }
 
   export type UserCountOrderByAggregateInput = {
     id?: SortOrder
     email?: SortOrder
+<<<<<<< HEAD
     name?: SortOrder
   }
 
   export type UserAvgOrderByAggregateInput = {
     id?: SortOrder
+=======
+>>>>>>> house
   }
 
   export type UserMaxOrderByAggregateInput = {
     id?: SortOrder
     email?: SortOrder
+<<<<<<< HEAD
     name?: SortOrder
+=======
+>>>>>>> house
   }
 
   export type UserMinOrderByAggregateInput = {
     id?: SortOrder
     email?: SortOrder
+<<<<<<< HEAD
     name?: SortOrder
   }
 
@@ -3536,6 +5692,8 @@ export namespace Prisma {
     _sum?: NestedIntFilter<$PrismaModel>
     _min?: NestedIntFilter<$PrismaModel>
     _max?: NestedIntFilter<$PrismaModel>
+=======
+>>>>>>> house
   }
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
@@ -3555,6 +5713,220 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+<<<<<<< HEAD
+=======
+  export type IntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
+  }
+
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | null
+    notIn?: string[] | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
+  export type FloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type BoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
+  export type UserListRelationFilter = {
+    every?: UserWhereInput
+    some?: UserWhereInput
+    none?: UserWhereInput
+  }
+
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
+  }
+
+  export type UserOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type HouseCountOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    address?: SortOrder
+    bathrooms?: SortOrder
+    bedrooms?: SortOrder
+    price?: SortOrder
+    contact?: SortOrder
+    amenities?: SortOrder
+    image?: SortOrder
+    schoolDistance?: SortOrder
+    schoolWalkTime?: SortOrder
+    groceryDistance?: SortOrder
+    groceryWalkTime?: SortOrder
+    groceryStore?: SortOrder
+    groceryAdress?: SortOrder
+    pharmacyDistance?: SortOrder
+    pharmacyWalkTime?: SortOrder
+    pharmacyStore?: SortOrder
+    pharmacyAdress?: SortOrder
+    downtownDistance?: SortOrder
+    downtownWalkTime?: SortOrder
+    shuttle?: SortOrder
+    legitimate?: SortOrder
+    laundry?: SortOrder
+    parking?: SortOrder
+    ac?: SortOrder
+    pet?: SortOrder
+    dishwasher?: SortOrder
+    cluster?: SortOrder
+  }
+
+  export type HouseAvgOrderByAggregateInput = {
+    id?: SortOrder
+    bathrooms?: SortOrder
+    bedrooms?: SortOrder
+    price?: SortOrder
+    schoolDistance?: SortOrder
+    schoolWalkTime?: SortOrder
+    groceryDistance?: SortOrder
+    groceryWalkTime?: SortOrder
+    pharmacyDistance?: SortOrder
+    pharmacyWalkTime?: SortOrder
+    downtownDistance?: SortOrder
+    downtownWalkTime?: SortOrder
+    cluster?: SortOrder
+  }
+
+  export type HouseMaxOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    address?: SortOrder
+    bathrooms?: SortOrder
+    bedrooms?: SortOrder
+    price?: SortOrder
+    contact?: SortOrder
+    amenities?: SortOrder
+    image?: SortOrder
+    schoolDistance?: SortOrder
+    schoolWalkTime?: SortOrder
+    groceryDistance?: SortOrder
+    groceryWalkTime?: SortOrder
+    groceryStore?: SortOrder
+    groceryAdress?: SortOrder
+    pharmacyDistance?: SortOrder
+    pharmacyWalkTime?: SortOrder
+    pharmacyStore?: SortOrder
+    pharmacyAdress?: SortOrder
+    downtownDistance?: SortOrder
+    downtownWalkTime?: SortOrder
+    shuttle?: SortOrder
+    legitimate?: SortOrder
+    laundry?: SortOrder
+    parking?: SortOrder
+    ac?: SortOrder
+    pet?: SortOrder
+    dishwasher?: SortOrder
+    cluster?: SortOrder
+  }
+
+  export type HouseMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+    address?: SortOrder
+    bathrooms?: SortOrder
+    bedrooms?: SortOrder
+    price?: SortOrder
+    contact?: SortOrder
+    amenities?: SortOrder
+    image?: SortOrder
+    schoolDistance?: SortOrder
+    schoolWalkTime?: SortOrder
+    groceryDistance?: SortOrder
+    groceryWalkTime?: SortOrder
+    groceryStore?: SortOrder
+    groceryAdress?: SortOrder
+    pharmacyDistance?: SortOrder
+    pharmacyWalkTime?: SortOrder
+    pharmacyStore?: SortOrder
+    pharmacyAdress?: SortOrder
+    downtownDistance?: SortOrder
+    downtownWalkTime?: SortOrder
+    shuttle?: SortOrder
+    legitimate?: SortOrder
+    laundry?: SortOrder
+    parking?: SortOrder
+    ac?: SortOrder
+    pet?: SortOrder
+    dishwasher?: SortOrder
+    cluster?: SortOrder
+  }
+
+  export type HouseSumOrderByAggregateInput = {
+    id?: SortOrder
+    bathrooms?: SortOrder
+    bedrooms?: SortOrder
+    price?: SortOrder
+    schoolDistance?: SortOrder
+    schoolWalkTime?: SortOrder
+    groceryDistance?: SortOrder
+    groceryWalkTime?: SortOrder
+    pharmacyDistance?: SortOrder
+    pharmacyWalkTime?: SortOrder
+    downtownDistance?: SortOrder
+    downtownWalkTime?: SortOrder
+    cluster?: SortOrder
+  }
+
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
+>>>>>>> house
   export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | null
@@ -3572,6 +5944,7 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
+<<<<<<< HEAD
   export type BoolFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolFilter<$PrismaModel> | boolean
@@ -3636,16 +6009,160 @@ export namespace Prisma {
     connectOrCreate?: PostCreateOrConnectWithoutAuthorInput | PostCreateOrConnectWithoutAuthorInput[]
     createMany?: PostCreateManyAuthorInputEnvelope
     connect?: PostWhereUniqueInput | PostWhereUniqueInput[]
+=======
+  export type FloatNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedFloatNullableFilter<$PrismaModel>
+    _min?: NestedFloatNullableFilter<$PrismaModel>
+    _max?: NestedFloatNullableFilter<$PrismaModel>
+  }
+
+  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type BoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
+  }
+
+  export type HouseCreateNestedManyWithoutSavedByInput = {
+    create?: XOR<HouseCreateWithoutSavedByInput, HouseUncheckedCreateWithoutSavedByInput> | HouseCreateWithoutSavedByInput[] | HouseUncheckedCreateWithoutSavedByInput[]
+    connectOrCreate?: HouseCreateOrConnectWithoutSavedByInput | HouseCreateOrConnectWithoutSavedByInput[]
+    connect?: HouseWhereUniqueInput | HouseWhereUniqueInput[]
+  }
+
+  export type HouseCreateNestedManyWithoutViewedByInput = {
+    create?: XOR<HouseCreateWithoutViewedByInput, HouseUncheckedCreateWithoutViewedByInput> | HouseCreateWithoutViewedByInput[] | HouseUncheckedCreateWithoutViewedByInput[]
+    connectOrCreate?: HouseCreateOrConnectWithoutViewedByInput | HouseCreateOrConnectWithoutViewedByInput[]
+    connect?: HouseWhereUniqueInput | HouseWhereUniqueInput[]
+  }
+
+  export type HouseUncheckedCreateNestedManyWithoutSavedByInput = {
+    create?: XOR<HouseCreateWithoutSavedByInput, HouseUncheckedCreateWithoutSavedByInput> | HouseCreateWithoutSavedByInput[] | HouseUncheckedCreateWithoutSavedByInput[]
+    connectOrCreate?: HouseCreateOrConnectWithoutSavedByInput | HouseCreateOrConnectWithoutSavedByInput[]
+    connect?: HouseWhereUniqueInput | HouseWhereUniqueInput[]
+  }
+
+  export type HouseUncheckedCreateNestedManyWithoutViewedByInput = {
+    create?: XOR<HouseCreateWithoutViewedByInput, HouseUncheckedCreateWithoutViewedByInput> | HouseCreateWithoutViewedByInput[] | HouseUncheckedCreateWithoutViewedByInput[]
+    connectOrCreate?: HouseCreateOrConnectWithoutViewedByInput | HouseCreateOrConnectWithoutViewedByInput[]
+    connect?: HouseWhereUniqueInput | HouseWhereUniqueInput[]
+>>>>>>> house
   }
 
   export type StringFieldUpdateOperationsInput = {
     set?: string
   }
 
+<<<<<<< HEAD
+=======
+  export type HouseUpdateManyWithoutSavedByNestedInput = {
+    create?: XOR<HouseCreateWithoutSavedByInput, HouseUncheckedCreateWithoutSavedByInput> | HouseCreateWithoutSavedByInput[] | HouseUncheckedCreateWithoutSavedByInput[]
+    connectOrCreate?: HouseCreateOrConnectWithoutSavedByInput | HouseCreateOrConnectWithoutSavedByInput[]
+    upsert?: HouseUpsertWithWhereUniqueWithoutSavedByInput | HouseUpsertWithWhereUniqueWithoutSavedByInput[]
+    set?: HouseWhereUniqueInput | HouseWhereUniqueInput[]
+    disconnect?: HouseWhereUniqueInput | HouseWhereUniqueInput[]
+    delete?: HouseWhereUniqueInput | HouseWhereUniqueInput[]
+    connect?: HouseWhereUniqueInput | HouseWhereUniqueInput[]
+    update?: HouseUpdateWithWhereUniqueWithoutSavedByInput | HouseUpdateWithWhereUniqueWithoutSavedByInput[]
+    updateMany?: HouseUpdateManyWithWhereWithoutSavedByInput | HouseUpdateManyWithWhereWithoutSavedByInput[]
+    deleteMany?: HouseScalarWhereInput | HouseScalarWhereInput[]
+  }
+
+  export type HouseUpdateManyWithoutViewedByNestedInput = {
+    create?: XOR<HouseCreateWithoutViewedByInput, HouseUncheckedCreateWithoutViewedByInput> | HouseCreateWithoutViewedByInput[] | HouseUncheckedCreateWithoutViewedByInput[]
+    connectOrCreate?: HouseCreateOrConnectWithoutViewedByInput | HouseCreateOrConnectWithoutViewedByInput[]
+    upsert?: HouseUpsertWithWhereUniqueWithoutViewedByInput | HouseUpsertWithWhereUniqueWithoutViewedByInput[]
+    set?: HouseWhereUniqueInput | HouseWhereUniqueInput[]
+    disconnect?: HouseWhereUniqueInput | HouseWhereUniqueInput[]
+    delete?: HouseWhereUniqueInput | HouseWhereUniqueInput[]
+    connect?: HouseWhereUniqueInput | HouseWhereUniqueInput[]
+    update?: HouseUpdateWithWhereUniqueWithoutViewedByInput | HouseUpdateWithWhereUniqueWithoutViewedByInput[]
+    updateMany?: HouseUpdateManyWithWhereWithoutViewedByInput | HouseUpdateManyWithWhereWithoutViewedByInput[]
+    deleteMany?: HouseScalarWhereInput | HouseScalarWhereInput[]
+  }
+
+  export type HouseUncheckedUpdateManyWithoutSavedByNestedInput = {
+    create?: XOR<HouseCreateWithoutSavedByInput, HouseUncheckedCreateWithoutSavedByInput> | HouseCreateWithoutSavedByInput[] | HouseUncheckedCreateWithoutSavedByInput[]
+    connectOrCreate?: HouseCreateOrConnectWithoutSavedByInput | HouseCreateOrConnectWithoutSavedByInput[]
+    upsert?: HouseUpsertWithWhereUniqueWithoutSavedByInput | HouseUpsertWithWhereUniqueWithoutSavedByInput[]
+    set?: HouseWhereUniqueInput | HouseWhereUniqueInput[]
+    disconnect?: HouseWhereUniqueInput | HouseWhereUniqueInput[]
+    delete?: HouseWhereUniqueInput | HouseWhereUniqueInput[]
+    connect?: HouseWhereUniqueInput | HouseWhereUniqueInput[]
+    update?: HouseUpdateWithWhereUniqueWithoutSavedByInput | HouseUpdateWithWhereUniqueWithoutSavedByInput[]
+    updateMany?: HouseUpdateManyWithWhereWithoutSavedByInput | HouseUpdateManyWithWhereWithoutSavedByInput[]
+    deleteMany?: HouseScalarWhereInput | HouseScalarWhereInput[]
+  }
+
+  export type HouseUncheckedUpdateManyWithoutViewedByNestedInput = {
+    create?: XOR<HouseCreateWithoutViewedByInput, HouseUncheckedCreateWithoutViewedByInput> | HouseCreateWithoutViewedByInput[] | HouseUncheckedCreateWithoutViewedByInput[]
+    connectOrCreate?: HouseCreateOrConnectWithoutViewedByInput | HouseCreateOrConnectWithoutViewedByInput[]
+    upsert?: HouseUpsertWithWhereUniqueWithoutViewedByInput | HouseUpsertWithWhereUniqueWithoutViewedByInput[]
+    set?: HouseWhereUniqueInput | HouseWhereUniqueInput[]
+    disconnect?: HouseWhereUniqueInput | HouseWhereUniqueInput[]
+    delete?: HouseWhereUniqueInput | HouseWhereUniqueInput[]
+    connect?: HouseWhereUniqueInput | HouseWhereUniqueInput[]
+    update?: HouseUpdateWithWhereUniqueWithoutViewedByInput | HouseUpdateWithWhereUniqueWithoutViewedByInput[]
+    updateMany?: HouseUpdateManyWithWhereWithoutViewedByInput | HouseUpdateManyWithWhereWithoutViewedByInput[]
+    deleteMany?: HouseScalarWhereInput | HouseScalarWhereInput[]
+  }
+
+  export type UserCreateNestedManyWithoutSavedHousesInput = {
+    create?: XOR<UserCreateWithoutSavedHousesInput, UserUncheckedCreateWithoutSavedHousesInput> | UserCreateWithoutSavedHousesInput[] | UserUncheckedCreateWithoutSavedHousesInput[]
+    connectOrCreate?: UserCreateOrConnectWithoutSavedHousesInput | UserCreateOrConnectWithoutSavedHousesInput[]
+    connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
+  }
+
+  export type UserCreateNestedManyWithoutViewedHousesInput = {
+    create?: XOR<UserCreateWithoutViewedHousesInput, UserUncheckedCreateWithoutViewedHousesInput> | UserCreateWithoutViewedHousesInput[] | UserUncheckedCreateWithoutViewedHousesInput[]
+    connectOrCreate?: UserCreateOrConnectWithoutViewedHousesInput | UserCreateOrConnectWithoutViewedHousesInput[]
+    connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
+  }
+
+  export type UserUncheckedCreateNestedManyWithoutSavedHousesInput = {
+    create?: XOR<UserCreateWithoutSavedHousesInput, UserUncheckedCreateWithoutSavedHousesInput> | UserCreateWithoutSavedHousesInput[] | UserUncheckedCreateWithoutSavedHousesInput[]
+    connectOrCreate?: UserCreateOrConnectWithoutSavedHousesInput | UserCreateOrConnectWithoutSavedHousesInput[]
+    connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
+  }
+
+  export type UserUncheckedCreateNestedManyWithoutViewedHousesInput = {
+    create?: XOR<UserCreateWithoutViewedHousesInput, UserUncheckedCreateWithoutViewedHousesInput> | UserCreateWithoutViewedHousesInput[] | UserUncheckedCreateWithoutViewedHousesInput[]
+    connectOrCreate?: UserCreateOrConnectWithoutViewedHousesInput | UserCreateOrConnectWithoutViewedHousesInput[]
+    connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
+  }
+
+>>>>>>> house
   export type NullableStringFieldUpdateOperationsInput = {
     set?: string | null
   }
 
+<<<<<<< HEAD
   export type PostUpdateManyWithoutAuthorNestedInput = {
     create?: XOR<PostCreateWithoutAuthorInput, PostUncheckedCreateWithoutAuthorInput> | PostCreateWithoutAuthorInput[] | PostUncheckedCreateWithoutAuthorInput[]
     connectOrCreate?: PostCreateOrConnectWithoutAuthorInput | PostCreateOrConnectWithoutAuthorInput[]
@@ -3658,6 +6175,52 @@ export namespace Prisma {
     update?: PostUpdateWithWhereUniqueWithoutAuthorInput | PostUpdateWithWhereUniqueWithoutAuthorInput[]
     updateMany?: PostUpdateManyWithWhereWithoutAuthorInput | PostUpdateManyWithWhereWithoutAuthorInput[]
     deleteMany?: PostScalarWhereInput | PostScalarWhereInput[]
+=======
+  export type NullableFloatFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type NullableIntFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type NullableBoolFieldUpdateOperationsInput = {
+    set?: boolean | null
+  }
+
+  export type UserUpdateManyWithoutSavedHousesNestedInput = {
+    create?: XOR<UserCreateWithoutSavedHousesInput, UserUncheckedCreateWithoutSavedHousesInput> | UserCreateWithoutSavedHousesInput[] | UserUncheckedCreateWithoutSavedHousesInput[]
+    connectOrCreate?: UserCreateOrConnectWithoutSavedHousesInput | UserCreateOrConnectWithoutSavedHousesInput[]
+    upsert?: UserUpsertWithWhereUniqueWithoutSavedHousesInput | UserUpsertWithWhereUniqueWithoutSavedHousesInput[]
+    set?: UserWhereUniqueInput | UserWhereUniqueInput[]
+    disconnect?: UserWhereUniqueInput | UserWhereUniqueInput[]
+    delete?: UserWhereUniqueInput | UserWhereUniqueInput[]
+    connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
+    update?: UserUpdateWithWhereUniqueWithoutSavedHousesInput | UserUpdateWithWhereUniqueWithoutSavedHousesInput[]
+    updateMany?: UserUpdateManyWithWhereWithoutSavedHousesInput | UserUpdateManyWithWhereWithoutSavedHousesInput[]
+    deleteMany?: UserScalarWhereInput | UserScalarWhereInput[]
+  }
+
+  export type UserUpdateManyWithoutViewedHousesNestedInput = {
+    create?: XOR<UserCreateWithoutViewedHousesInput, UserUncheckedCreateWithoutViewedHousesInput> | UserCreateWithoutViewedHousesInput[] | UserUncheckedCreateWithoutViewedHousesInput[]
+    connectOrCreate?: UserCreateOrConnectWithoutViewedHousesInput | UserCreateOrConnectWithoutViewedHousesInput[]
+    upsert?: UserUpsertWithWhereUniqueWithoutViewedHousesInput | UserUpsertWithWhereUniqueWithoutViewedHousesInput[]
+    set?: UserWhereUniqueInput | UserWhereUniqueInput[]
+    disconnect?: UserWhereUniqueInput | UserWhereUniqueInput[]
+    delete?: UserWhereUniqueInput | UserWhereUniqueInput[]
+    connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
+    update?: UserUpdateWithWhereUniqueWithoutViewedHousesInput | UserUpdateWithWhereUniqueWithoutViewedHousesInput[]
+    updateMany?: UserUpdateManyWithWhereWithoutViewedHousesInput | UserUpdateManyWithWhereWithoutViewedHousesInput[]
+    deleteMany?: UserScalarWhereInput | UserScalarWhereInput[]
+>>>>>>> house
   }
 
   export type IntFieldUpdateOperationsInput = {
@@ -3668,6 +6231,7 @@ export namespace Prisma {
     divide?: number
   }
 
+<<<<<<< HEAD
   export type PostUncheckedUpdateManyWithoutAuthorNestedInput = {
     create?: XOR<PostCreateWithoutAuthorInput, PostUncheckedCreateWithoutAuthorInput> | PostCreateWithoutAuthorInput[] | PostUncheckedCreateWithoutAuthorInput[]
     connectOrCreate?: PostCreateOrConnectWithoutAuthorInput | PostCreateOrConnectWithoutAuthorInput[]
@@ -3709,6 +6273,32 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntFilter<$PrismaModel> | number
+=======
+  export type UserUncheckedUpdateManyWithoutSavedHousesNestedInput = {
+    create?: XOR<UserCreateWithoutSavedHousesInput, UserUncheckedCreateWithoutSavedHousesInput> | UserCreateWithoutSavedHousesInput[] | UserUncheckedCreateWithoutSavedHousesInput[]
+    connectOrCreate?: UserCreateOrConnectWithoutSavedHousesInput | UserCreateOrConnectWithoutSavedHousesInput[]
+    upsert?: UserUpsertWithWhereUniqueWithoutSavedHousesInput | UserUpsertWithWhereUniqueWithoutSavedHousesInput[]
+    set?: UserWhereUniqueInput | UserWhereUniqueInput[]
+    disconnect?: UserWhereUniqueInput | UserWhereUniqueInput[]
+    delete?: UserWhereUniqueInput | UserWhereUniqueInput[]
+    connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
+    update?: UserUpdateWithWhereUniqueWithoutSavedHousesInput | UserUpdateWithWhereUniqueWithoutSavedHousesInput[]
+    updateMany?: UserUpdateManyWithWhereWithoutSavedHousesInput | UserUpdateManyWithWhereWithoutSavedHousesInput[]
+    deleteMany?: UserScalarWhereInput | UserScalarWhereInput[]
+  }
+
+  export type UserUncheckedUpdateManyWithoutViewedHousesNestedInput = {
+    create?: XOR<UserCreateWithoutViewedHousesInput, UserUncheckedCreateWithoutViewedHousesInput> | UserCreateWithoutViewedHousesInput[] | UserUncheckedCreateWithoutViewedHousesInput[]
+    connectOrCreate?: UserCreateOrConnectWithoutViewedHousesInput | UserCreateOrConnectWithoutViewedHousesInput[]
+    upsert?: UserUpsertWithWhereUniqueWithoutViewedHousesInput | UserUpsertWithWhereUniqueWithoutViewedHousesInput[]
+    set?: UserWhereUniqueInput | UserWhereUniqueInput[]
+    disconnect?: UserWhereUniqueInput | UserWhereUniqueInput[]
+    delete?: UserWhereUniqueInput | UserWhereUniqueInput[]
+    connect?: UserWhereUniqueInput | UserWhereUniqueInput[]
+    update?: UserUpdateWithWhereUniqueWithoutViewedHousesInput | UserUpdateWithWhereUniqueWithoutViewedHousesInput[]
+    updateMany?: UserUpdateManyWithWhereWithoutViewedHousesInput | UserUpdateManyWithWhereWithoutViewedHousesInput[]
+    deleteMany?: UserScalarWhereInput | UserScalarWhereInput[]
+>>>>>>> house
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -3725,6 +6315,37 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+<<<<<<< HEAD
+=======
+  export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[]
+    notIn?: string[]
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedStringFilter<$PrismaModel>
+    _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type NestedIntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
+  }
+
+>>>>>>> house
   export type NestedStringNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | null
@@ -3739,6 +6360,36 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
+<<<<<<< HEAD
+=======
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedBoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
+>>>>>>> house
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[]
@@ -3766,6 +6417,7 @@ export namespace Prisma {
     not?: NestedFloatFilter<$PrismaModel> | number
   }
 
+<<<<<<< HEAD
   export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[]
@@ -3783,6 +6435,8 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+=======
+>>>>>>> house
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | null
@@ -3800,7 +6454,27 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
+<<<<<<< HEAD
   export type NestedIntNullableFilter<$PrismaModel = never> = {
+=======
+  export type NestedFloatNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedFloatNullableFilter<$PrismaModel>
+    _min?: NestedFloatNullableFilter<$PrismaModel>
+    _max?: NestedFloatNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+>>>>>>> house
     equals?: number | IntFieldRefInput<$PrismaModel> | null
     in?: number[] | null
     notIn?: number[] | null
@@ -3808,6 +6482,7 @@ export namespace Prisma {
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
+<<<<<<< HEAD
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
@@ -3936,6 +6611,531 @@ export namespace Prisma {
     title?: StringFieldUpdateOperationsInput | string
     content?: NullableStringFieldUpdateOperationsInput | string | null
     published?: BoolFieldUpdateOperationsInput | boolean
+=======
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type NestedBoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
+  }
+
+  export type HouseCreateWithoutSavedByInput = {
+    name?: string | null
+    address?: string | null
+    bathrooms?: number | null
+    bedrooms?: number | null
+    price?: number | null
+    contact?: string | null
+    amenities?: string | null
+    image?: string | null
+    schoolDistance?: number | null
+    schoolWalkTime?: number | null
+    groceryDistance?: number | null
+    groceryWalkTime?: number | null
+    groceryStore?: string | null
+    groceryAdress?: string | null
+    pharmacyDistance?: number | null
+    pharmacyWalkTime?: number | null
+    pharmacyStore?: string | null
+    pharmacyAdress?: string | null
+    downtownDistance?: number | null
+    downtownWalkTime?: number | null
+    shuttle?: boolean | null
+    legitimate?: boolean | null
+    laundry?: boolean | null
+    parking?: boolean | null
+    ac?: boolean | null
+    pet?: boolean | null
+    dishwasher?: boolean | null
+    cluster?: number | null
+    viewedBy?: UserCreateNestedManyWithoutViewedHousesInput
+  }
+
+  export type HouseUncheckedCreateWithoutSavedByInput = {
+    id?: number
+    name?: string | null
+    address?: string | null
+    bathrooms?: number | null
+    bedrooms?: number | null
+    price?: number | null
+    contact?: string | null
+    amenities?: string | null
+    image?: string | null
+    schoolDistance?: number | null
+    schoolWalkTime?: number | null
+    groceryDistance?: number | null
+    groceryWalkTime?: number | null
+    groceryStore?: string | null
+    groceryAdress?: string | null
+    pharmacyDistance?: number | null
+    pharmacyWalkTime?: number | null
+    pharmacyStore?: string | null
+    pharmacyAdress?: string | null
+    downtownDistance?: number | null
+    downtownWalkTime?: number | null
+    shuttle?: boolean | null
+    legitimate?: boolean | null
+    laundry?: boolean | null
+    parking?: boolean | null
+    ac?: boolean | null
+    pet?: boolean | null
+    dishwasher?: boolean | null
+    cluster?: number | null
+    viewedBy?: UserUncheckedCreateNestedManyWithoutViewedHousesInput
+  }
+
+  export type HouseCreateOrConnectWithoutSavedByInput = {
+    where: HouseWhereUniqueInput
+    create: XOR<HouseCreateWithoutSavedByInput, HouseUncheckedCreateWithoutSavedByInput>
+  }
+
+  export type HouseCreateWithoutViewedByInput = {
+    name?: string | null
+    address?: string | null
+    bathrooms?: number | null
+    bedrooms?: number | null
+    price?: number | null
+    contact?: string | null
+    amenities?: string | null
+    image?: string | null
+    schoolDistance?: number | null
+    schoolWalkTime?: number | null
+    groceryDistance?: number | null
+    groceryWalkTime?: number | null
+    groceryStore?: string | null
+    groceryAdress?: string | null
+    pharmacyDistance?: number | null
+    pharmacyWalkTime?: number | null
+    pharmacyStore?: string | null
+    pharmacyAdress?: string | null
+    downtownDistance?: number | null
+    downtownWalkTime?: number | null
+    shuttle?: boolean | null
+    legitimate?: boolean | null
+    laundry?: boolean | null
+    parking?: boolean | null
+    ac?: boolean | null
+    pet?: boolean | null
+    dishwasher?: boolean | null
+    cluster?: number | null
+    savedBy?: UserCreateNestedManyWithoutSavedHousesInput
+  }
+
+  export type HouseUncheckedCreateWithoutViewedByInput = {
+    id?: number
+    name?: string | null
+    address?: string | null
+    bathrooms?: number | null
+    bedrooms?: number | null
+    price?: number | null
+    contact?: string | null
+    amenities?: string | null
+    image?: string | null
+    schoolDistance?: number | null
+    schoolWalkTime?: number | null
+    groceryDistance?: number | null
+    groceryWalkTime?: number | null
+    groceryStore?: string | null
+    groceryAdress?: string | null
+    pharmacyDistance?: number | null
+    pharmacyWalkTime?: number | null
+    pharmacyStore?: string | null
+    pharmacyAdress?: string | null
+    downtownDistance?: number | null
+    downtownWalkTime?: number | null
+    shuttle?: boolean | null
+    legitimate?: boolean | null
+    laundry?: boolean | null
+    parking?: boolean | null
+    ac?: boolean | null
+    pet?: boolean | null
+    dishwasher?: boolean | null
+    cluster?: number | null
+    savedBy?: UserUncheckedCreateNestedManyWithoutSavedHousesInput
+  }
+
+  export type HouseCreateOrConnectWithoutViewedByInput = {
+    where: HouseWhereUniqueInput
+    create: XOR<HouseCreateWithoutViewedByInput, HouseUncheckedCreateWithoutViewedByInput>
+  }
+
+  export type HouseUpsertWithWhereUniqueWithoutSavedByInput = {
+    where: HouseWhereUniqueInput
+    update: XOR<HouseUpdateWithoutSavedByInput, HouseUncheckedUpdateWithoutSavedByInput>
+    create: XOR<HouseCreateWithoutSavedByInput, HouseUncheckedCreateWithoutSavedByInput>
+  }
+
+  export type HouseUpdateWithWhereUniqueWithoutSavedByInput = {
+    where: HouseWhereUniqueInput
+    data: XOR<HouseUpdateWithoutSavedByInput, HouseUncheckedUpdateWithoutSavedByInput>
+  }
+
+  export type HouseUpdateManyWithWhereWithoutSavedByInput = {
+    where: HouseScalarWhereInput
+    data: XOR<HouseUpdateManyMutationInput, HouseUncheckedUpdateManyWithoutSavedByInput>
+  }
+
+  export type HouseScalarWhereInput = {
+    AND?: HouseScalarWhereInput | HouseScalarWhereInput[]
+    OR?: HouseScalarWhereInput[]
+    NOT?: HouseScalarWhereInput | HouseScalarWhereInput[]
+    id?: IntFilter<"House"> | number
+    name?: StringNullableFilter<"House"> | string | null
+    address?: StringNullableFilter<"House"> | string | null
+    bathrooms?: FloatNullableFilter<"House"> | number | null
+    bedrooms?: IntNullableFilter<"House"> | number | null
+    price?: FloatNullableFilter<"House"> | number | null
+    contact?: StringNullableFilter<"House"> | string | null
+    amenities?: StringNullableFilter<"House"> | string | null
+    image?: StringNullableFilter<"House"> | string | null
+    schoolDistance?: FloatNullableFilter<"House"> | number | null
+    schoolWalkTime?: FloatNullableFilter<"House"> | number | null
+    groceryDistance?: FloatNullableFilter<"House"> | number | null
+    groceryWalkTime?: FloatNullableFilter<"House"> | number | null
+    groceryStore?: StringNullableFilter<"House"> | string | null
+    groceryAdress?: StringNullableFilter<"House"> | string | null
+    pharmacyDistance?: FloatNullableFilter<"House"> | number | null
+    pharmacyWalkTime?: FloatNullableFilter<"House"> | number | null
+    pharmacyStore?: StringNullableFilter<"House"> | string | null
+    pharmacyAdress?: StringNullableFilter<"House"> | string | null
+    downtownDistance?: FloatNullableFilter<"House"> | number | null
+    downtownWalkTime?: FloatNullableFilter<"House"> | number | null
+    shuttle?: BoolNullableFilter<"House"> | boolean | null
+    legitimate?: BoolNullableFilter<"House"> | boolean | null
+    laundry?: BoolNullableFilter<"House"> | boolean | null
+    parking?: BoolNullableFilter<"House"> | boolean | null
+    ac?: BoolNullableFilter<"House"> | boolean | null
+    pet?: BoolNullableFilter<"House"> | boolean | null
+    dishwasher?: BoolNullableFilter<"House"> | boolean | null
+    cluster?: IntNullableFilter<"House"> | number | null
+  }
+
+  export type HouseUpsertWithWhereUniqueWithoutViewedByInput = {
+    where: HouseWhereUniqueInput
+    update: XOR<HouseUpdateWithoutViewedByInput, HouseUncheckedUpdateWithoutViewedByInput>
+    create: XOR<HouseCreateWithoutViewedByInput, HouseUncheckedCreateWithoutViewedByInput>
+  }
+
+  export type HouseUpdateWithWhereUniqueWithoutViewedByInput = {
+    where: HouseWhereUniqueInput
+    data: XOR<HouseUpdateWithoutViewedByInput, HouseUncheckedUpdateWithoutViewedByInput>
+  }
+
+  export type HouseUpdateManyWithWhereWithoutViewedByInput = {
+    where: HouseScalarWhereInput
+    data: XOR<HouseUpdateManyMutationInput, HouseUncheckedUpdateManyWithoutViewedByInput>
+  }
+
+  export type UserCreateWithoutSavedHousesInput = {
+    id: string
+    email: string
+    viewedHouses?: HouseCreateNestedManyWithoutViewedByInput
+  }
+
+  export type UserUncheckedCreateWithoutSavedHousesInput = {
+    id: string
+    email: string
+    viewedHouses?: HouseUncheckedCreateNestedManyWithoutViewedByInput
+  }
+
+  export type UserCreateOrConnectWithoutSavedHousesInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutSavedHousesInput, UserUncheckedCreateWithoutSavedHousesInput>
+  }
+
+  export type UserCreateWithoutViewedHousesInput = {
+    id: string
+    email: string
+    savedHouses?: HouseCreateNestedManyWithoutSavedByInput
+  }
+
+  export type UserUncheckedCreateWithoutViewedHousesInput = {
+    id: string
+    email: string
+    savedHouses?: HouseUncheckedCreateNestedManyWithoutSavedByInput
+  }
+
+  export type UserCreateOrConnectWithoutViewedHousesInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutViewedHousesInput, UserUncheckedCreateWithoutViewedHousesInput>
+  }
+
+  export type UserUpsertWithWhereUniqueWithoutSavedHousesInput = {
+    where: UserWhereUniqueInput
+    update: XOR<UserUpdateWithoutSavedHousesInput, UserUncheckedUpdateWithoutSavedHousesInput>
+    create: XOR<UserCreateWithoutSavedHousesInput, UserUncheckedCreateWithoutSavedHousesInput>
+  }
+
+  export type UserUpdateWithWhereUniqueWithoutSavedHousesInput = {
+    where: UserWhereUniqueInput
+    data: XOR<UserUpdateWithoutSavedHousesInput, UserUncheckedUpdateWithoutSavedHousesInput>
+  }
+
+  export type UserUpdateManyWithWhereWithoutSavedHousesInput = {
+    where: UserScalarWhereInput
+    data: XOR<UserUpdateManyMutationInput, UserUncheckedUpdateManyWithoutSavedHousesInput>
+  }
+
+  export type UserScalarWhereInput = {
+    AND?: UserScalarWhereInput | UserScalarWhereInput[]
+    OR?: UserScalarWhereInput[]
+    NOT?: UserScalarWhereInput | UserScalarWhereInput[]
+    id?: StringFilter<"User"> | string
+    email?: StringFilter<"User"> | string
+  }
+
+  export type UserUpsertWithWhereUniqueWithoutViewedHousesInput = {
+    where: UserWhereUniqueInput
+    update: XOR<UserUpdateWithoutViewedHousesInput, UserUncheckedUpdateWithoutViewedHousesInput>
+    create: XOR<UserCreateWithoutViewedHousesInput, UserUncheckedCreateWithoutViewedHousesInput>
+  }
+
+  export type UserUpdateWithWhereUniqueWithoutViewedHousesInput = {
+    where: UserWhereUniqueInput
+    data: XOR<UserUpdateWithoutViewedHousesInput, UserUncheckedUpdateWithoutViewedHousesInput>
+  }
+
+  export type UserUpdateManyWithWhereWithoutViewedHousesInput = {
+    where: UserScalarWhereInput
+    data: XOR<UserUpdateManyMutationInput, UserUncheckedUpdateManyWithoutViewedHousesInput>
+  }
+
+  export type HouseUpdateWithoutSavedByInput = {
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    bathrooms?: NullableFloatFieldUpdateOperationsInput | number | null
+    bedrooms?: NullableIntFieldUpdateOperationsInput | number | null
+    price?: NullableFloatFieldUpdateOperationsInput | number | null
+    contact?: NullableStringFieldUpdateOperationsInput | string | null
+    amenities?: NullableStringFieldUpdateOperationsInput | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    schoolDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    schoolWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryStore?: NullableStringFieldUpdateOperationsInput | string | null
+    groceryAdress?: NullableStringFieldUpdateOperationsInput | string | null
+    pharmacyDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    pharmacyWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    pharmacyStore?: NullableStringFieldUpdateOperationsInput | string | null
+    pharmacyAdress?: NullableStringFieldUpdateOperationsInput | string | null
+    downtownDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    downtownWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    shuttle?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    legitimate?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    laundry?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    parking?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ac?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    pet?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    dishwasher?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    cluster?: NullableIntFieldUpdateOperationsInput | number | null
+    viewedBy?: UserUpdateManyWithoutViewedHousesNestedInput
+  }
+
+  export type HouseUncheckedUpdateWithoutSavedByInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    bathrooms?: NullableFloatFieldUpdateOperationsInput | number | null
+    bedrooms?: NullableIntFieldUpdateOperationsInput | number | null
+    price?: NullableFloatFieldUpdateOperationsInput | number | null
+    contact?: NullableStringFieldUpdateOperationsInput | string | null
+    amenities?: NullableStringFieldUpdateOperationsInput | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    schoolDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    schoolWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryStore?: NullableStringFieldUpdateOperationsInput | string | null
+    groceryAdress?: NullableStringFieldUpdateOperationsInput | string | null
+    pharmacyDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    pharmacyWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    pharmacyStore?: NullableStringFieldUpdateOperationsInput | string | null
+    pharmacyAdress?: NullableStringFieldUpdateOperationsInput | string | null
+    downtownDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    downtownWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    shuttle?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    legitimate?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    laundry?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    parking?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ac?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    pet?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    dishwasher?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    cluster?: NullableIntFieldUpdateOperationsInput | number | null
+    viewedBy?: UserUncheckedUpdateManyWithoutViewedHousesNestedInput
+  }
+
+  export type HouseUncheckedUpdateManyWithoutSavedByInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    bathrooms?: NullableFloatFieldUpdateOperationsInput | number | null
+    bedrooms?: NullableIntFieldUpdateOperationsInput | number | null
+    price?: NullableFloatFieldUpdateOperationsInput | number | null
+    contact?: NullableStringFieldUpdateOperationsInput | string | null
+    amenities?: NullableStringFieldUpdateOperationsInput | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    schoolDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    schoolWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryStore?: NullableStringFieldUpdateOperationsInput | string | null
+    groceryAdress?: NullableStringFieldUpdateOperationsInput | string | null
+    pharmacyDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    pharmacyWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    pharmacyStore?: NullableStringFieldUpdateOperationsInput | string | null
+    pharmacyAdress?: NullableStringFieldUpdateOperationsInput | string | null
+    downtownDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    downtownWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    shuttle?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    legitimate?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    laundry?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    parking?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ac?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    pet?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    dishwasher?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    cluster?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type HouseUpdateWithoutViewedByInput = {
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    bathrooms?: NullableFloatFieldUpdateOperationsInput | number | null
+    bedrooms?: NullableIntFieldUpdateOperationsInput | number | null
+    price?: NullableFloatFieldUpdateOperationsInput | number | null
+    contact?: NullableStringFieldUpdateOperationsInput | string | null
+    amenities?: NullableStringFieldUpdateOperationsInput | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    schoolDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    schoolWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryStore?: NullableStringFieldUpdateOperationsInput | string | null
+    groceryAdress?: NullableStringFieldUpdateOperationsInput | string | null
+    pharmacyDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    pharmacyWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    pharmacyStore?: NullableStringFieldUpdateOperationsInput | string | null
+    pharmacyAdress?: NullableStringFieldUpdateOperationsInput | string | null
+    downtownDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    downtownWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    shuttle?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    legitimate?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    laundry?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    parking?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ac?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    pet?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    dishwasher?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    cluster?: NullableIntFieldUpdateOperationsInput | number | null
+    savedBy?: UserUpdateManyWithoutSavedHousesNestedInput
+  }
+
+  export type HouseUncheckedUpdateWithoutViewedByInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    bathrooms?: NullableFloatFieldUpdateOperationsInput | number | null
+    bedrooms?: NullableIntFieldUpdateOperationsInput | number | null
+    price?: NullableFloatFieldUpdateOperationsInput | number | null
+    contact?: NullableStringFieldUpdateOperationsInput | string | null
+    amenities?: NullableStringFieldUpdateOperationsInput | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    schoolDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    schoolWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryStore?: NullableStringFieldUpdateOperationsInput | string | null
+    groceryAdress?: NullableStringFieldUpdateOperationsInput | string | null
+    pharmacyDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    pharmacyWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    pharmacyStore?: NullableStringFieldUpdateOperationsInput | string | null
+    pharmacyAdress?: NullableStringFieldUpdateOperationsInput | string | null
+    downtownDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    downtownWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    shuttle?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    legitimate?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    laundry?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    parking?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ac?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    pet?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    dishwasher?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    cluster?: NullableIntFieldUpdateOperationsInput | number | null
+    savedBy?: UserUncheckedUpdateManyWithoutSavedHousesNestedInput
+  }
+
+  export type HouseUncheckedUpdateManyWithoutViewedByInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    address?: NullableStringFieldUpdateOperationsInput | string | null
+    bathrooms?: NullableFloatFieldUpdateOperationsInput | number | null
+    bedrooms?: NullableIntFieldUpdateOperationsInput | number | null
+    price?: NullableFloatFieldUpdateOperationsInput | number | null
+    contact?: NullableStringFieldUpdateOperationsInput | string | null
+    amenities?: NullableStringFieldUpdateOperationsInput | string | null
+    image?: NullableStringFieldUpdateOperationsInput | string | null
+    schoolDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    schoolWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    groceryStore?: NullableStringFieldUpdateOperationsInput | string | null
+    groceryAdress?: NullableStringFieldUpdateOperationsInput | string | null
+    pharmacyDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    pharmacyWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    pharmacyStore?: NullableStringFieldUpdateOperationsInput | string | null
+    pharmacyAdress?: NullableStringFieldUpdateOperationsInput | string | null
+    downtownDistance?: NullableFloatFieldUpdateOperationsInput | number | null
+    downtownWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    shuttle?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    legitimate?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    laundry?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    parking?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ac?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    pet?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    dishwasher?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    cluster?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type UserUpdateWithoutSavedHousesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    viewedHouses?: HouseUpdateManyWithoutViewedByNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutSavedHousesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    viewedHouses?: HouseUncheckedUpdateManyWithoutViewedByNestedInput
+  }
+
+  export type UserUncheckedUpdateManyWithoutSavedHousesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type UserUpdateWithoutViewedHousesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    savedHouses?: HouseUpdateManyWithoutSavedByNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutViewedHousesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    savedHouses?: HouseUncheckedUpdateManyWithoutSavedByNestedInput
+  }
+
+  export type UserUncheckedUpdateManyWithoutViewedHousesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+>>>>>>> house
   }
 
 

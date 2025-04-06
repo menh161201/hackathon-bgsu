@@ -4,7 +4,11 @@ import { encodedRedirect } from "@/utils/utils";
 import { createClient } from "@/utils/supabase/server";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+<<<<<<< HEAD
 import { db } from "@/db";
+=======
+import prisma from "@/db";
+>>>>>>> house
 
 export const signUpAction = async (formData: FormData) => {
   const email = formData.get("email")?.toString();
@@ -23,15 +27,20 @@ export const signUpAction = async (formData: FormData) => {
   const { data,error } = await supabase.auth.signUp({
     email,
     password,
+<<<<<<< HEAD
     options: {
       emailRedirectTo: `${origin}/auth/callback`,
     },
+=======
+ 
+>>>>>>> house
   });
 
   if (error) {
     console.error(error.code + " " + error.message);
     return encodedRedirect("error", "/sign-up", error.message);
   } else {
+<<<<<<< HEAD
     
     try {
       await db.user.create({
@@ -50,6 +59,20 @@ export const signUpAction = async (formData: FormData) => {
     
     return redirect("/protected");
     
+=======
+    try {
+      await prisma.user.create({
+        data: {
+          email: email,
+          id: data.user!.id,
+        },
+      });
+    }catch (error) {
+      console.error("Error creating user in database: ", error);
+      
+    }
+    return redirect("/");
+>>>>>>> house
   }
 };
 
@@ -67,7 +90,11 @@ export const signInAction = async (formData: FormData) => {
     return encodedRedirect("error", "/sign-in", error.message);
   }
 
+<<<<<<< HEAD
   return redirect("/protected");
+=======
+  return redirect("/");
+>>>>>>> house
 };
 
 export const forgotPasswordAction = async (formData: FormData) => {

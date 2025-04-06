@@ -116,6 +116,7 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 
 exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
+<<<<<<< HEAD
   email: 'email',
   name: 'name'
 };
@@ -126,6 +127,41 @@ exports.Prisma.PostScalarFieldEnum = {
   content: 'content',
   published: 'published',
   authorId: 'authorId'
+=======
+  email: 'email'
+};
+
+exports.Prisma.HouseScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  address: 'address',
+  bathrooms: 'bathrooms',
+  bedrooms: 'bedrooms',
+  price: 'price',
+  contact: 'contact',
+  amenities: 'amenities',
+  image: 'image',
+  schoolDistance: 'schoolDistance',
+  schoolWalkTime: 'schoolWalkTime',
+  groceryDistance: 'groceryDistance',
+  groceryWalkTime: 'groceryWalkTime',
+  groceryStore: 'groceryStore',
+  groceryAdress: 'groceryAdress',
+  pharmacyDistance: 'pharmacyDistance',
+  pharmacyWalkTime: 'pharmacyWalkTime',
+  pharmacyStore: 'pharmacyStore',
+  pharmacyAdress: 'pharmacyAdress',
+  downtownDistance: 'downtownDistance',
+  downtownWalkTime: 'downtownWalkTime',
+  shuttle: 'shuttle',
+  legitimate: 'legitimate',
+  laundry: 'laundry',
+  parking: 'parking',
+  ac: 'ac',
+  pet: 'pet',
+  dishwasher: 'dishwasher',
+  cluster: 'cluster'
+>>>>>>> house
 };
 
 exports.Prisma.SortOrder = {
@@ -141,7 +177,11 @@ exports.Prisma.NullsOrder = {
 
 exports.Prisma.ModelName = {
   User: 'User',
+<<<<<<< HEAD
   Post: 'Post'
+=======
+  House: 'House'
+>>>>>>> house
 };
 
 /**

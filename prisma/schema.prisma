@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 generator client {
   provider = "prisma-client-js"
   output   = "../generated/prisma"
+=======
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output = "../generated/prisma"
+>>>>>>> house
 }
 
 datasource db {
@@ -9,6 +18,7 @@ datasource db {
 }
 
 model User {
+<<<<<<< HEAD
   id    Int     @id @default(autoincrement())
   email String  @unique
   name  String?
@@ -22,4 +32,45 @@ model Post {
   published Boolean @default(false)
   authorId  Int
   author    User    @relation(fields: [authorId], references: [id])
+=======
+  id    String     @id 
+  email String  @unique
+  savedHouses House[] @relation("SavedHouses")
+  viewedHouses House[] @relation("ViewedHouses")
+  
+}
+
+model House {
+  id                Int     @id @default(autoincrement())
+  name              String?
+  address           String?
+  bathrooms         Float?
+  bedrooms          Int?
+  price             Float?
+  contact           String?
+  amenities         String?
+  image             String?
+  schoolDistance    Float?
+  schoolWalkTime    Float?
+  groceryDistance   Float?
+  groceryWalkTime   Float?
+  groceryStore      String?
+  groceryAdress     String?
+  pharmacyDistance  Float?
+  pharmacyWalkTime  Float?
+  pharmacyStore     String?
+  pharmacyAdress    String?
+  downtownDistance  Float?
+  downtownWalkTime  Float?
+  shuttle           Boolean?
+  legitimate        Boolean?
+  laundry           Boolean?
+  parking           Boolean?
+  ac                Boolean?
+  pet               Boolean?
+  dishwasher        Boolean?
+  cluster           Int?
+  savedBy   User[]  @relation("SavedHouses")
+  viewedBy  User[]  @relation("ViewedHouses")
+>>>>>>> house
 }
