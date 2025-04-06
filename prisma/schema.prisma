@@ -20,29 +20,35 @@ model User {
 }
 
 model House {
-  id        Int     @id @default(autoincrement())
-  name      String?
-  address   String?
-  bathrooms Float?
-  bedrooms  Int?
-  price     Float?
-  utitlities Float?
-  amenities String?
-  image     String?
-  schoolDistance Float?
-  schoolWalkTime Float?
-  groceryDistance Float?
-  groceryWalkTime Float?
-  groceryStore String?
-  groceryAdress String?
-  pharmacyDistance Float?
-  pharmacyWalkTime Float?
-  pharmacyStore String?
-  pharmacyAdress String?
-  downtownDistance Float?
-  downtownWalkTime Float?
-  shuttle   Boolean?
-  legitimate Boolean?
+  id                Int     @id @default(autoincrement())
+  name              String?
+  address           String?
+  bathrooms         Float?
+  bedrooms          Int?
+  price             Float?
+  contact           String?
+  amenities         String?
+  image             String?
+  schoolDistance    Float?
+  schoolWalkTime    Float?
+  groceryDistance   Float?
+  groceryWalkTime   Float?
+  groceryStore      String?
+  groceryAdress     String?
+  pharmacyDistance  Float?
+  pharmacyWalkTime  Float?
+  pharmacyStore     String?
+  pharmacyAdress    String?
+  downtownDistance  Float?
+  downtownWalkTime  Float?
+  shuttle           Boolean?
+  legitimate        Boolean?
+  laundry           Boolean?
+  parking           Boolean?
+  ac                Boolean?
+  pet               Boolean?
+  dishwasher        Boolean?
+  cluster           Int?
   savedBy   User[]  @relation("SavedHouses")
   viewedBy  User[]  @relation("ViewedHouses")
 }

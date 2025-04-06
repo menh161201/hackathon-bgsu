@@ -8,8 +8,9 @@ import {
   import { Checkbox } from "@/components/ui/checkbox"
   import { Slider } from "@/components/ui/slider"
 
-
-
+  import { IoBed } from "react-icons/io5";
+  import { PiBathtubFill } from "react-icons/pi";
+  import { FaDollarSign } from "react-icons/fa";
   
 
 export default function FilterBar({filters, setFilters}: any) {
@@ -37,6 +38,16 @@ export default function FilterBar({filters, setFilters}: any) {
           maxPrice: value[0], // Track only the current slider value (max price)
         }));
       };
+      const amenitiesList = ["laundry", "parking", "ac", "pet", "dishwasher", "shuttle"];
+      const handleAmenityChange = (amenity: string) => {
+        setFilters((prevFilters: any) => ({
+          ...prevFilters,
+          amenities: {
+            ...prevFilters.amenities,
+            [amenity]: !prevFilters.amenities[amenity],
+          },
+        }));
+      };
 
     const handleSchoolTimeChange = (value: number[]) => {
     setFilters((prev: any) => ({
@@ -56,7 +67,7 @@ export default function FilterBar({filters, setFilters}: any) {
         <div className="px-6 py-4 flex space-x-3 justify-between ">
             <Popover>
                 <PopoverTrigger className="rounded-sm shadow-md px-4 py-1 hover:opacity-80">
-                    Bed
+                    <IoBed />
                 </PopoverTrigger>
                 <PopoverContent className="w-fit flex flex-col gap-2">
                     {[1, 2, 3, 4].map((bed) => (
@@ -78,7 +89,7 @@ export default function FilterBar({filters, setFilters}: any) {
 
             <Popover>
                 <PopoverTrigger className="rounded-lg shadow-md px-4 py-1 hover:opacity-80">
-                    Bath
+                    <PiBathtubFill />
                 </PopoverTrigger>
                 <PopoverContent className="w-fit flex flex-col gap-2">
                     {[1, 2, 3, 4].map((bath) => (
@@ -97,7 +108,7 @@ export default function FilterBar({filters, setFilters}: any) {
             </Popover>
             <Popover>
                 <PopoverTrigger className="rounded-lg shadow-md px-4 py-1 hover:opacity-80">
-                    Price
+                    <FaDollarSign />
                 </PopoverTrigger>
                 <PopoverContent className="w-[200px] flex flex-col gap-2">
                     <Slider
@@ -117,7 +128,18 @@ export default function FilterBar({filters, setFilters}: any) {
                     Amenities
                 </PopoverTrigger>
                 <PopoverContent>
-                    
+                    {amenitiesList.map((amenity) => (
+                        <div key={amenity} className="items-top flex space-x-2">
+                            <Checkbox
+                            id={`amenity-${amenity}`}
+                            checked={filters.amenities[amenity]}
+                            onCheckedChange={() => handleAmenityChange(amenity)}
+                            />
+                            <label htmlFor={`amenity-${amenity}`} className="text-sm font-medium">
+                            {amenity.charAt(0).toUpperCase() + amenity.slice(1)}
+                            </label>
+                        </div>
+                        ))}
                 </PopoverContent>
             </Popover>
             <Popover>

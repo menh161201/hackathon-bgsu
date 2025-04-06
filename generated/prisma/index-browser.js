@@ -126,7 +126,7 @@ exports.Prisma.HouseScalarFieldEnum = {
   bathrooms: 'bathrooms',
   bedrooms: 'bedrooms',
   price: 'price',
-  utitlities: 'utitlities',
+  contact: 'contact',
   amenities: 'amenities',
   image: 'image',
   schoolDistance: 'schoolDistance',
@@ -142,7 +142,13 @@ exports.Prisma.HouseScalarFieldEnum = {
   downtownDistance: 'downtownDistance',
   downtownWalkTime: 'downtownWalkTime',
   shuttle: 'shuttle',
-  legitimate: 'legitimate'
+  legitimate: 'legitimate',
+  laundry: 'laundry',
+  parking: 'parking',
+  ac: 'ac',
+  pet: 'pet',
+  dishwasher: 'dishwasher',
+  cluster: 'cluster'
 };
 
 exports.Prisma.SortOrder = {

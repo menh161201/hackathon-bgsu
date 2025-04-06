@@ -2113,7 +2113,6 @@ export namespace Prisma {
     bathrooms: number | null
     bedrooms: number | null
     price: number | null
-    utitlities: number | null
     schoolDistance: number | null
     schoolWalkTime: number | null
     groceryDistance: number | null
@@ -2122,6 +2121,7 @@ export namespace Prisma {
     pharmacyWalkTime: number | null
     downtownDistance: number | null
     downtownWalkTime: number | null
+    cluster: number | null
   }
 
   export type HouseSumAggregateOutputType = {
@@ -2129,7 +2129,6 @@ export namespace Prisma {
     bathrooms: number | null
     bedrooms: number | null
     price: number | null
-    utitlities: number | null
     schoolDistance: number | null
     schoolWalkTime: number | null
     groceryDistance: number | null
@@ -2138,6 +2137,7 @@ export namespace Prisma {
     pharmacyWalkTime: number | null
     downtownDistance: number | null
     downtownWalkTime: number | null
+    cluster: number | null
   }
 
   export type HouseMinAggregateOutputType = {
@@ -2147,7 +2147,7 @@ export namespace Prisma {
     bathrooms: number | null
     bedrooms: number | null
     price: number | null
-    utitlities: number | null
+    contact: string | null
     amenities: string | null
     image: string | null
     schoolDistance: number | null
@@ -2164,6 +2164,12 @@ export namespace Prisma {
     downtownWalkTime: number | null
     shuttle: boolean | null
     legitimate: boolean | null
+    laundry: boolean | null
+    parking: boolean | null
+    ac: boolean | null
+    pet: boolean | null
+    dishwasher: boolean | null
+    cluster: number | null
   }
 
   export type HouseMaxAggregateOutputType = {
@@ -2173,7 +2179,7 @@ export namespace Prisma {
     bathrooms: number | null
     bedrooms: number | null
     price: number | null
-    utitlities: number | null
+    contact: string | null
     amenities: string | null
     image: string | null
     schoolDistance: number | null
@@ -2190,6 +2196,12 @@ export namespace Prisma {
     downtownWalkTime: number | null
     shuttle: boolean | null
     legitimate: boolean | null
+    laundry: boolean | null
+    parking: boolean | null
+    ac: boolean | null
+    pet: boolean | null
+    dishwasher: boolean | null
+    cluster: number | null
   }
 
   export type HouseCountAggregateOutputType = {
@@ -2199,7 +2211,7 @@ export namespace Prisma {
     bathrooms: number
     bedrooms: number
     price: number
-    utitlities: number
+    contact: number
     amenities: number
     image: number
     schoolDistance: number
@@ -2216,6 +2228,12 @@ export namespace Prisma {
     downtownWalkTime: number
     shuttle: number
     legitimate: number
+    laundry: number
+    parking: number
+    ac: number
+    pet: number
+    dishwasher: number
+    cluster: number
     _all: number
   }
 
@@ -2225,7 +2243,6 @@ export namespace Prisma {
     bathrooms?: true
     bedrooms?: true
     price?: true
-    utitlities?: true
     schoolDistance?: true
     schoolWalkTime?: true
     groceryDistance?: true
@@ -2234,6 +2251,7 @@ export namespace Prisma {
     pharmacyWalkTime?: true
     downtownDistance?: true
     downtownWalkTime?: true
+    cluster?: true
   }
 
   export type HouseSumAggregateInputType = {
@@ -2241,7 +2259,6 @@ export namespace Prisma {
     bathrooms?: true
     bedrooms?: true
     price?: true
-    utitlities?: true
     schoolDistance?: true
     schoolWalkTime?: true
     groceryDistance?: true
@@ -2250,6 +2267,7 @@ export namespace Prisma {
     pharmacyWalkTime?: true
     downtownDistance?: true
     downtownWalkTime?: true
+    cluster?: true
   }
 
   export type HouseMinAggregateInputType = {
@@ -2259,7 +2277,7 @@ export namespace Prisma {
     bathrooms?: true
     bedrooms?: true
     price?: true
-    utitlities?: true
+    contact?: true
     amenities?: true
     image?: true
     schoolDistance?: true
@@ -2276,6 +2294,12 @@ export namespace Prisma {
     downtownWalkTime?: true
     shuttle?: true
     legitimate?: true
+    laundry?: true
+    parking?: true
+    ac?: true
+    pet?: true
+    dishwasher?: true
+    cluster?: true
   }
 
   export type HouseMaxAggregateInputType = {
@@ -2285,7 +2309,7 @@ export namespace Prisma {
     bathrooms?: true
     bedrooms?: true
     price?: true
-    utitlities?: true
+    contact?: true
     amenities?: true
     image?: true
     schoolDistance?: true
@@ -2302,6 +2326,12 @@ export namespace Prisma {
     downtownWalkTime?: true
     shuttle?: true
     legitimate?: true
+    laundry?: true
+    parking?: true
+    ac?: true
+    pet?: true
+    dishwasher?: true
+    cluster?: true
   }
 
   export type HouseCountAggregateInputType = {
@@ -2311,7 +2341,7 @@ export namespace Prisma {
     bathrooms?: true
     bedrooms?: true
     price?: true
-    utitlities?: true
+    contact?: true
     amenities?: true
     image?: true
     schoolDistance?: true
@@ -2328,6 +2358,12 @@ export namespace Prisma {
     downtownWalkTime?: true
     shuttle?: true
     legitimate?: true
+    laundry?: true
+    parking?: true
+    ac?: true
+    pet?: true
+    dishwasher?: true
+    cluster?: true
     _all?: true
   }
 
@@ -2424,7 +2460,7 @@ export namespace Prisma {
     bathrooms: number | null
     bedrooms: number | null
     price: number | null
-    utitlities: number | null
+    contact: string | null
     amenities: string | null
     image: string | null
     schoolDistance: number | null
@@ -2441,6 +2477,12 @@ export namespace Prisma {
     downtownWalkTime: number | null
     shuttle: boolean | null
     legitimate: boolean | null
+    laundry: boolean | null
+    parking: boolean | null
+    ac: boolean | null
+    pet: boolean | null
+    dishwasher: boolean | null
+    cluster: number | null
     _count: HouseCountAggregateOutputType | null
     _avg: HouseAvgAggregateOutputType | null
     _sum: HouseSumAggregateOutputType | null
@@ -2469,7 +2511,7 @@ export namespace Prisma {
     bathrooms?: boolean
     bedrooms?: boolean
     price?: boolean
-    utitlities?: boolean
+    contact?: boolean
     amenities?: boolean
     image?: boolean
     schoolDistance?: boolean
@@ -2486,6 +2528,12 @@ export namespace Prisma {
     downtownWalkTime?: boolean
     shuttle?: boolean
     legitimate?: boolean
+    laundry?: boolean
+    parking?: boolean
+    ac?: boolean
+    pet?: boolean
+    dishwasher?: boolean
+    cluster?: boolean
     savedBy?: boolean | House$savedByArgs<ExtArgs>
     viewedBy?: boolean | House$viewedByArgs<ExtArgs>
     _count?: boolean | HouseCountOutputTypeDefaultArgs<ExtArgs>
@@ -2498,7 +2546,7 @@ export namespace Prisma {
     bathrooms?: boolean
     bedrooms?: boolean
     price?: boolean
-    utitlities?: boolean
+    contact?: boolean
     amenities?: boolean
     image?: boolean
     schoolDistance?: boolean
@@ -2515,6 +2563,12 @@ export namespace Prisma {
     downtownWalkTime?: boolean
     shuttle?: boolean
     legitimate?: boolean
+    laundry?: boolean
+    parking?: boolean
+    ac?: boolean
+    pet?: boolean
+    dishwasher?: boolean
+    cluster?: boolean
   }, ExtArgs["result"]["house"]>
 
   export type HouseSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -2524,7 +2578,7 @@ export namespace Prisma {
     bathrooms?: boolean
     bedrooms?: boolean
     price?: boolean
-    utitlities?: boolean
+    contact?: boolean
     amenities?: boolean
     image?: boolean
     schoolDistance?: boolean
@@ -2541,6 +2595,12 @@ export namespace Prisma {
     downtownWalkTime?: boolean
     shuttle?: boolean
     legitimate?: boolean
+    laundry?: boolean
+    parking?: boolean
+    ac?: boolean
+    pet?: boolean
+    dishwasher?: boolean
+    cluster?: boolean
   }, ExtArgs["result"]["house"]>
 
   export type HouseSelectScalar = {
@@ -2550,7 +2610,7 @@ export namespace Prisma {
     bathrooms?: boolean
     bedrooms?: boolean
     price?: boolean
-    utitlities?: boolean
+    contact?: boolean
     amenities?: boolean
     image?: boolean
     schoolDistance?: boolean
@@ -2567,9 +2627,15 @@ export namespace Prisma {
     downtownWalkTime?: boolean
     shuttle?: boolean
     legitimate?: boolean
+    laundry?: boolean
+    parking?: boolean
+    ac?: boolean
+    pet?: boolean
+    dishwasher?: boolean
+    cluster?: boolean
   }
 
-  export type HouseOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "address" | "bathrooms" | "bedrooms" | "price" | "utitlities" | "amenities" | "image" | "schoolDistance" | "schoolWalkTime" | "groceryDistance" | "groceryWalkTime" | "groceryStore" | "groceryAdress" | "pharmacyDistance" | "pharmacyWalkTime" | "pharmacyStore" | "pharmacyAdress" | "downtownDistance" | "downtownWalkTime" | "shuttle" | "legitimate", ExtArgs["result"]["house"]>
+  export type HouseOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "address" | "bathrooms" | "bedrooms" | "price" | "contact" | "amenities" | "image" | "schoolDistance" | "schoolWalkTime" | "groceryDistance" | "groceryWalkTime" | "groceryStore" | "groceryAdress" | "pharmacyDistance" | "pharmacyWalkTime" | "pharmacyStore" | "pharmacyAdress" | "downtownDistance" | "downtownWalkTime" | "shuttle" | "legitimate" | "laundry" | "parking" | "ac" | "pet" | "dishwasher" | "cluster", ExtArgs["result"]["house"]>
   export type HouseInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     savedBy?: boolean | House$savedByArgs<ExtArgs>
     viewedBy?: boolean | House$viewedByArgs<ExtArgs>
@@ -2591,7 +2657,7 @@ export namespace Prisma {
       bathrooms: number | null
       bedrooms: number | null
       price: number | null
-      utitlities: number | null
+      contact: string | null
       amenities: string | null
       image: string | null
       schoolDistance: number | null
@@ -2608,6 +2674,12 @@ export namespace Prisma {
       downtownWalkTime: number | null
       shuttle: boolean | null
       legitimate: boolean | null
+      laundry: boolean | null
+      parking: boolean | null
+      ac: boolean | null
+      pet: boolean | null
+      dishwasher: boolean | null
+      cluster: number | null
     }, ExtArgs["result"]["house"]>
     composites: {}
   }
@@ -3039,7 +3111,7 @@ export namespace Prisma {
     readonly bathrooms: FieldRef<"House", 'Float'>
     readonly bedrooms: FieldRef<"House", 'Int'>
     readonly price: FieldRef<"House", 'Float'>
-    readonly utitlities: FieldRef<"House", 'Float'>
+    readonly contact: FieldRef<"House", 'String'>
     readonly amenities: FieldRef<"House", 'String'>
     readonly image: FieldRef<"House", 'String'>
     readonly schoolDistance: FieldRef<"House", 'Float'>
@@ -3056,6 +3128,12 @@ export namespace Prisma {
     readonly downtownWalkTime: FieldRef<"House", 'Float'>
     readonly shuttle: FieldRef<"House", 'Boolean'>
     readonly legitimate: FieldRef<"House", 'Boolean'>
+    readonly laundry: FieldRef<"House", 'Boolean'>
+    readonly parking: FieldRef<"House", 'Boolean'>
+    readonly ac: FieldRef<"House", 'Boolean'>
+    readonly pet: FieldRef<"House", 'Boolean'>
+    readonly dishwasher: FieldRef<"House", 'Boolean'>
+    readonly cluster: FieldRef<"House", 'Int'>
   }
     
 
@@ -3534,7 +3612,7 @@ export namespace Prisma {
     bathrooms: 'bathrooms',
     bedrooms: 'bedrooms',
     price: 'price',
-    utitlities: 'utitlities',
+    contact: 'contact',
     amenities: 'amenities',
     image: 'image',
     schoolDistance: 'schoolDistance',
@@ -3550,7 +3628,13 @@ export namespace Prisma {
     downtownDistance: 'downtownDistance',
     downtownWalkTime: 'downtownWalkTime',
     shuttle: 'shuttle',
-    legitimate: 'legitimate'
+    legitimate: 'legitimate',
+    laundry: 'laundry',
+    parking: 'parking',
+    ac: 'ac',
+    pet: 'pet',
+    dishwasher: 'dishwasher',
+    cluster: 'cluster'
   };
 
   export type HouseScalarFieldEnum = (typeof HouseScalarFieldEnum)[keyof typeof HouseScalarFieldEnum]
@@ -3661,7 +3745,7 @@ export namespace Prisma {
     bathrooms?: FloatNullableFilter<"House"> | number | null
     bedrooms?: IntNullableFilter<"House"> | number | null
     price?: FloatNullableFilter<"House"> | number | null
-    utitlities?: FloatNullableFilter<"House"> | number | null
+    contact?: StringNullableFilter<"House"> | string | null
     amenities?: StringNullableFilter<"House"> | string | null
     image?: StringNullableFilter<"House"> | string | null
     schoolDistance?: FloatNullableFilter<"House"> | number | null
@@ -3678,6 +3762,12 @@ export namespace Prisma {
     downtownWalkTime?: FloatNullableFilter<"House"> | number | null
     shuttle?: BoolNullableFilter<"House"> | boolean | null
     legitimate?: BoolNullableFilter<"House"> | boolean | null
+    laundry?: BoolNullableFilter<"House"> | boolean | null
+    parking?: BoolNullableFilter<"House"> | boolean | null
+    ac?: BoolNullableFilter<"House"> | boolean | null
+    pet?: BoolNullableFilter<"House"> | boolean | null
+    dishwasher?: BoolNullableFilter<"House"> | boolean | null
+    cluster?: IntNullableFilter<"House"> | number | null
     savedBy?: UserListRelationFilter
     viewedBy?: UserListRelationFilter
   }
@@ -3689,7 +3779,7 @@ export namespace Prisma {
     bathrooms?: SortOrderInput | SortOrder
     bedrooms?: SortOrderInput | SortOrder
     price?: SortOrderInput | SortOrder
-    utitlities?: SortOrderInput | SortOrder
+    contact?: SortOrderInput | SortOrder
     amenities?: SortOrderInput | SortOrder
     image?: SortOrderInput | SortOrder
     schoolDistance?: SortOrderInput | SortOrder
@@ -3706,6 +3796,12 @@ export namespace Prisma {
     downtownWalkTime?: SortOrderInput | SortOrder
     shuttle?: SortOrderInput | SortOrder
     legitimate?: SortOrderInput | SortOrder
+    laundry?: SortOrderInput | SortOrder
+    parking?: SortOrderInput | SortOrder
+    ac?: SortOrderInput | SortOrder
+    pet?: SortOrderInput | SortOrder
+    dishwasher?: SortOrderInput | SortOrder
+    cluster?: SortOrderInput | SortOrder
     savedBy?: UserOrderByRelationAggregateInput
     viewedBy?: UserOrderByRelationAggregateInput
   }
@@ -3720,7 +3816,7 @@ export namespace Prisma {
     bathrooms?: FloatNullableFilter<"House"> | number | null
     bedrooms?: IntNullableFilter<"House"> | number | null
     price?: FloatNullableFilter<"House"> | number | null
-    utitlities?: FloatNullableFilter<"House"> | number | null
+    contact?: StringNullableFilter<"House"> | string | null
     amenities?: StringNullableFilter<"House"> | string | null
     image?: StringNullableFilter<"House"> | string | null
     schoolDistance?: FloatNullableFilter<"House"> | number | null
@@ -3737,6 +3833,12 @@ export namespace Prisma {
     downtownWalkTime?: FloatNullableFilter<"House"> | number | null
     shuttle?: BoolNullableFilter<"House"> | boolean | null
     legitimate?: BoolNullableFilter<"House"> | boolean | null
+    laundry?: BoolNullableFilter<"House"> | boolean | null
+    parking?: BoolNullableFilter<"House"> | boolean | null
+    ac?: BoolNullableFilter<"House"> | boolean | null
+    pet?: BoolNullableFilter<"House"> | boolean | null
+    dishwasher?: BoolNullableFilter<"House"> | boolean | null
+    cluster?: IntNullableFilter<"House"> | number | null
     savedBy?: UserListRelationFilter
     viewedBy?: UserListRelationFilter
   }, "id">
@@ -3748,7 +3850,7 @@ export namespace Prisma {
     bathrooms?: SortOrderInput | SortOrder
     bedrooms?: SortOrderInput | SortOrder
     price?: SortOrderInput | SortOrder
-    utitlities?: SortOrderInput | SortOrder
+    contact?: SortOrderInput | SortOrder
     amenities?: SortOrderInput | SortOrder
     image?: SortOrderInput | SortOrder
     schoolDistance?: SortOrderInput | SortOrder
@@ -3765,6 +3867,12 @@ export namespace Prisma {
     downtownWalkTime?: SortOrderInput | SortOrder
     shuttle?: SortOrderInput | SortOrder
     legitimate?: SortOrderInput | SortOrder
+    laundry?: SortOrderInput | SortOrder
+    parking?: SortOrderInput | SortOrder
+    ac?: SortOrderInput | SortOrder
+    pet?: SortOrderInput | SortOrder
+    dishwasher?: SortOrderInput | SortOrder
+    cluster?: SortOrderInput | SortOrder
     _count?: HouseCountOrderByAggregateInput
     _avg?: HouseAvgOrderByAggregateInput
     _max?: HouseMaxOrderByAggregateInput
@@ -3782,7 +3890,7 @@ export namespace Prisma {
     bathrooms?: FloatNullableWithAggregatesFilter<"House"> | number | null
     bedrooms?: IntNullableWithAggregatesFilter<"House"> | number | null
     price?: FloatNullableWithAggregatesFilter<"House"> | number | null
-    utitlities?: FloatNullableWithAggregatesFilter<"House"> | number | null
+    contact?: StringNullableWithAggregatesFilter<"House"> | string | null
     amenities?: StringNullableWithAggregatesFilter<"House"> | string | null
     image?: StringNullableWithAggregatesFilter<"House"> | string | null
     schoolDistance?: FloatNullableWithAggregatesFilter<"House"> | number | null
@@ -3799,6 +3907,12 @@ export namespace Prisma {
     downtownWalkTime?: FloatNullableWithAggregatesFilter<"House"> | number | null
     shuttle?: BoolNullableWithAggregatesFilter<"House"> | boolean | null
     legitimate?: BoolNullableWithAggregatesFilter<"House"> | boolean | null
+    laundry?: BoolNullableWithAggregatesFilter<"House"> | boolean | null
+    parking?: BoolNullableWithAggregatesFilter<"House"> | boolean | null
+    ac?: BoolNullableWithAggregatesFilter<"House"> | boolean | null
+    pet?: BoolNullableWithAggregatesFilter<"House"> | boolean | null
+    dishwasher?: BoolNullableWithAggregatesFilter<"House"> | boolean | null
+    cluster?: IntNullableWithAggregatesFilter<"House"> | number | null
   }
 
   export type UserCreateInput = {
@@ -3850,7 +3964,7 @@ export namespace Prisma {
     bathrooms?: number | null
     bedrooms?: number | null
     price?: number | null
-    utitlities?: number | null
+    contact?: string | null
     amenities?: string | null
     image?: string | null
     schoolDistance?: number | null
@@ -3867,6 +3981,12 @@ export namespace Prisma {
     downtownWalkTime?: number | null
     shuttle?: boolean | null
     legitimate?: boolean | null
+    laundry?: boolean | null
+    parking?: boolean | null
+    ac?: boolean | null
+    pet?: boolean | null
+    dishwasher?: boolean | null
+    cluster?: number | null
     savedBy?: UserCreateNestedManyWithoutSavedHousesInput
     viewedBy?: UserCreateNestedManyWithoutViewedHousesInput
   }
@@ -3878,7 +3998,7 @@ export namespace Prisma {
     bathrooms?: number | null
     bedrooms?: number | null
     price?: number | null
-    utitlities?: number | null
+    contact?: string | null
     amenities?: string | null
     image?: string | null
     schoolDistance?: number | null
@@ -3895,6 +4015,12 @@ export namespace Prisma {
     downtownWalkTime?: number | null
     shuttle?: boolean | null
     legitimate?: boolean | null
+    laundry?: boolean | null
+    parking?: boolean | null
+    ac?: boolean | null
+    pet?: boolean | null
+    dishwasher?: boolean | null
+    cluster?: number | null
     savedBy?: UserUncheckedCreateNestedManyWithoutSavedHousesInput
     viewedBy?: UserUncheckedCreateNestedManyWithoutViewedHousesInput
   }
@@ -3905,7 +4031,7 @@ export namespace Prisma {
     bathrooms?: NullableFloatFieldUpdateOperationsInput | number | null
     bedrooms?: NullableIntFieldUpdateOperationsInput | number | null
     price?: NullableFloatFieldUpdateOperationsInput | number | null
-    utitlities?: NullableFloatFieldUpdateOperationsInput | number | null
+    contact?: NullableStringFieldUpdateOperationsInput | string | null
     amenities?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     schoolDistance?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -3922,6 +4048,12 @@ export namespace Prisma {
     downtownWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
     shuttle?: NullableBoolFieldUpdateOperationsInput | boolean | null
     legitimate?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    laundry?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    parking?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ac?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    pet?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    dishwasher?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    cluster?: NullableIntFieldUpdateOperationsInput | number | null
     savedBy?: UserUpdateManyWithoutSavedHousesNestedInput
     viewedBy?: UserUpdateManyWithoutViewedHousesNestedInput
   }
@@ -3933,7 +4065,7 @@ export namespace Prisma {
     bathrooms?: NullableFloatFieldUpdateOperationsInput | number | null
     bedrooms?: NullableIntFieldUpdateOperationsInput | number | null
     price?: NullableFloatFieldUpdateOperationsInput | number | null
-    utitlities?: NullableFloatFieldUpdateOperationsInput | number | null
+    contact?: NullableStringFieldUpdateOperationsInput | string | null
     amenities?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     schoolDistance?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -3950,6 +4082,12 @@ export namespace Prisma {
     downtownWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
     shuttle?: NullableBoolFieldUpdateOperationsInput | boolean | null
     legitimate?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    laundry?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    parking?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ac?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    pet?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    dishwasher?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    cluster?: NullableIntFieldUpdateOperationsInput | number | null
     savedBy?: UserUncheckedUpdateManyWithoutSavedHousesNestedInput
     viewedBy?: UserUncheckedUpdateManyWithoutViewedHousesNestedInput
   }
@@ -3961,7 +4099,7 @@ export namespace Prisma {
     bathrooms?: number | null
     bedrooms?: number | null
     price?: number | null
-    utitlities?: number | null
+    contact?: string | null
     amenities?: string | null
     image?: string | null
     schoolDistance?: number | null
@@ -3978,6 +4116,12 @@ export namespace Prisma {
     downtownWalkTime?: number | null
     shuttle?: boolean | null
     legitimate?: boolean | null
+    laundry?: boolean | null
+    parking?: boolean | null
+    ac?: boolean | null
+    pet?: boolean | null
+    dishwasher?: boolean | null
+    cluster?: number | null
   }
 
   export type HouseUpdateManyMutationInput = {
@@ -3986,7 +4130,7 @@ export namespace Prisma {
     bathrooms?: NullableFloatFieldUpdateOperationsInput | number | null
     bedrooms?: NullableIntFieldUpdateOperationsInput | number | null
     price?: NullableFloatFieldUpdateOperationsInput | number | null
-    utitlities?: NullableFloatFieldUpdateOperationsInput | number | null
+    contact?: NullableStringFieldUpdateOperationsInput | string | null
     amenities?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     schoolDistance?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -4003,6 +4147,12 @@ export namespace Prisma {
     downtownWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
     shuttle?: NullableBoolFieldUpdateOperationsInput | boolean | null
     legitimate?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    laundry?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    parking?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ac?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    pet?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    dishwasher?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    cluster?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type HouseUncheckedUpdateManyInput = {
@@ -4012,7 +4162,7 @@ export namespace Prisma {
     bathrooms?: NullableFloatFieldUpdateOperationsInput | number | null
     bedrooms?: NullableIntFieldUpdateOperationsInput | number | null
     price?: NullableFloatFieldUpdateOperationsInput | number | null
-    utitlities?: NullableFloatFieldUpdateOperationsInput | number | null
+    contact?: NullableStringFieldUpdateOperationsInput | string | null
     amenities?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     schoolDistance?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -4029,6 +4179,12 @@ export namespace Prisma {
     downtownWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
     shuttle?: NullableBoolFieldUpdateOperationsInput | boolean | null
     legitimate?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    laundry?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    parking?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ac?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    pet?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    dishwasher?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    cluster?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -4161,7 +4317,7 @@ export namespace Prisma {
     bathrooms?: SortOrder
     bedrooms?: SortOrder
     price?: SortOrder
-    utitlities?: SortOrder
+    contact?: SortOrder
     amenities?: SortOrder
     image?: SortOrder
     schoolDistance?: SortOrder
@@ -4178,6 +4334,12 @@ export namespace Prisma {
     downtownWalkTime?: SortOrder
     shuttle?: SortOrder
     legitimate?: SortOrder
+    laundry?: SortOrder
+    parking?: SortOrder
+    ac?: SortOrder
+    pet?: SortOrder
+    dishwasher?: SortOrder
+    cluster?: SortOrder
   }
 
   export type HouseAvgOrderByAggregateInput = {
@@ -4185,7 +4347,6 @@ export namespace Prisma {
     bathrooms?: SortOrder
     bedrooms?: SortOrder
     price?: SortOrder
-    utitlities?: SortOrder
     schoolDistance?: SortOrder
     schoolWalkTime?: SortOrder
     groceryDistance?: SortOrder
@@ -4194,6 +4355,7 @@ export namespace Prisma {
     pharmacyWalkTime?: SortOrder
     downtownDistance?: SortOrder
     downtownWalkTime?: SortOrder
+    cluster?: SortOrder
   }
 
   export type HouseMaxOrderByAggregateInput = {
@@ -4203,7 +4365,7 @@ export namespace Prisma {
     bathrooms?: SortOrder
     bedrooms?: SortOrder
     price?: SortOrder
-    utitlities?: SortOrder
+    contact?: SortOrder
     amenities?: SortOrder
     image?: SortOrder
     schoolDistance?: SortOrder
@@ -4220,6 +4382,12 @@ export namespace Prisma {
     downtownWalkTime?: SortOrder
     shuttle?: SortOrder
     legitimate?: SortOrder
+    laundry?: SortOrder
+    parking?: SortOrder
+    ac?: SortOrder
+    pet?: SortOrder
+    dishwasher?: SortOrder
+    cluster?: SortOrder
   }
 
   export type HouseMinOrderByAggregateInput = {
@@ -4229,7 +4397,7 @@ export namespace Prisma {
     bathrooms?: SortOrder
     bedrooms?: SortOrder
     price?: SortOrder
-    utitlities?: SortOrder
+    contact?: SortOrder
     amenities?: SortOrder
     image?: SortOrder
     schoolDistance?: SortOrder
@@ -4246,6 +4414,12 @@ export namespace Prisma {
     downtownWalkTime?: SortOrder
     shuttle?: SortOrder
     legitimate?: SortOrder
+    laundry?: SortOrder
+    parking?: SortOrder
+    ac?: SortOrder
+    pet?: SortOrder
+    dishwasher?: SortOrder
+    cluster?: SortOrder
   }
 
   export type HouseSumOrderByAggregateInput = {
@@ -4253,7 +4427,6 @@ export namespace Prisma {
     bathrooms?: SortOrder
     bedrooms?: SortOrder
     price?: SortOrder
-    utitlities?: SortOrder
     schoolDistance?: SortOrder
     schoolWalkTime?: SortOrder
     groceryDistance?: SortOrder
@@ -4262,6 +4435,7 @@ export namespace Prisma {
     pharmacyWalkTime?: SortOrder
     downtownDistance?: SortOrder
     downtownWalkTime?: SortOrder
+    cluster?: SortOrder
   }
 
   export type IntWithAggregatesFilter<$PrismaModel = never> = {
@@ -4698,7 +4872,7 @@ export namespace Prisma {
     bathrooms?: number | null
     bedrooms?: number | null
     price?: number | null
-    utitlities?: number | null
+    contact?: string | null
     amenities?: string | null
     image?: string | null
     schoolDistance?: number | null
@@ -4715,6 +4889,12 @@ export namespace Prisma {
     downtownWalkTime?: number | null
     shuttle?: boolean | null
     legitimate?: boolean | null
+    laundry?: boolean | null
+    parking?: boolean | null
+    ac?: boolean | null
+    pet?: boolean | null
+    dishwasher?: boolean | null
+    cluster?: number | null
     viewedBy?: UserCreateNestedManyWithoutViewedHousesInput
   }
 
@@ -4725,7 +4905,7 @@ export namespace Prisma {
     bathrooms?: number | null
     bedrooms?: number | null
     price?: number | null
-    utitlities?: number | null
+    contact?: string | null
     amenities?: string | null
     image?: string | null
     schoolDistance?: number | null
@@ -4742,6 +4922,12 @@ export namespace Prisma {
     downtownWalkTime?: number | null
     shuttle?: boolean | null
     legitimate?: boolean | null
+    laundry?: boolean | null
+    parking?: boolean | null
+    ac?: boolean | null
+    pet?: boolean | null
+    dishwasher?: boolean | null
+    cluster?: number | null
     viewedBy?: UserUncheckedCreateNestedManyWithoutViewedHousesInput
   }
 
@@ -4756,7 +4942,7 @@ export namespace Prisma {
     bathrooms?: number | null
     bedrooms?: number | null
     price?: number | null
-    utitlities?: number | null
+    contact?: string | null
     amenities?: string | null
     image?: string | null
     schoolDistance?: number | null
@@ -4773,6 +4959,12 @@ export namespace Prisma {
     downtownWalkTime?: number | null
     shuttle?: boolean | null
     legitimate?: boolean | null
+    laundry?: boolean | null
+    parking?: boolean | null
+    ac?: boolean | null
+    pet?: boolean | null
+    dishwasher?: boolean | null
+    cluster?: number | null
     savedBy?: UserCreateNestedManyWithoutSavedHousesInput
   }
 
@@ -4783,7 +4975,7 @@ export namespace Prisma {
     bathrooms?: number | null
     bedrooms?: number | null
     price?: number | null
-    utitlities?: number | null
+    contact?: string | null
     amenities?: string | null
     image?: string | null
     schoolDistance?: number | null
@@ -4800,6 +4992,12 @@ export namespace Prisma {
     downtownWalkTime?: number | null
     shuttle?: boolean | null
     legitimate?: boolean | null
+    laundry?: boolean | null
+    parking?: boolean | null
+    ac?: boolean | null
+    pet?: boolean | null
+    dishwasher?: boolean | null
+    cluster?: number | null
     savedBy?: UserUncheckedCreateNestedManyWithoutSavedHousesInput
   }
 
@@ -4834,7 +5032,7 @@ export namespace Prisma {
     bathrooms?: FloatNullableFilter<"House"> | number | null
     bedrooms?: IntNullableFilter<"House"> | number | null
     price?: FloatNullableFilter<"House"> | number | null
-    utitlities?: FloatNullableFilter<"House"> | number | null
+    contact?: StringNullableFilter<"House"> | string | null
     amenities?: StringNullableFilter<"House"> | string | null
     image?: StringNullableFilter<"House"> | string | null
     schoolDistance?: FloatNullableFilter<"House"> | number | null
@@ -4851,6 +5049,12 @@ export namespace Prisma {
     downtownWalkTime?: FloatNullableFilter<"House"> | number | null
     shuttle?: BoolNullableFilter<"House"> | boolean | null
     legitimate?: BoolNullableFilter<"House"> | boolean | null
+    laundry?: BoolNullableFilter<"House"> | boolean | null
+    parking?: BoolNullableFilter<"House"> | boolean | null
+    ac?: BoolNullableFilter<"House"> | boolean | null
+    pet?: BoolNullableFilter<"House"> | boolean | null
+    dishwasher?: BoolNullableFilter<"House"> | boolean | null
+    cluster?: IntNullableFilter<"House"> | number | null
   }
 
   export type HouseUpsertWithWhereUniqueWithoutViewedByInput = {
@@ -4949,7 +5153,7 @@ export namespace Prisma {
     bathrooms?: NullableFloatFieldUpdateOperationsInput | number | null
     bedrooms?: NullableIntFieldUpdateOperationsInput | number | null
     price?: NullableFloatFieldUpdateOperationsInput | number | null
-    utitlities?: NullableFloatFieldUpdateOperationsInput | number | null
+    contact?: NullableStringFieldUpdateOperationsInput | string | null
     amenities?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     schoolDistance?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -4966,6 +5170,12 @@ export namespace Prisma {
     downtownWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
     shuttle?: NullableBoolFieldUpdateOperationsInput | boolean | null
     legitimate?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    laundry?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    parking?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ac?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    pet?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    dishwasher?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    cluster?: NullableIntFieldUpdateOperationsInput | number | null
     viewedBy?: UserUpdateManyWithoutViewedHousesNestedInput
   }
 
@@ -4976,7 +5186,7 @@ export namespace Prisma {
     bathrooms?: NullableFloatFieldUpdateOperationsInput | number | null
     bedrooms?: NullableIntFieldUpdateOperationsInput | number | null
     price?: NullableFloatFieldUpdateOperationsInput | number | null
-    utitlities?: NullableFloatFieldUpdateOperationsInput | number | null
+    contact?: NullableStringFieldUpdateOperationsInput | string | null
     amenities?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     schoolDistance?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -4993,6 +5203,12 @@ export namespace Prisma {
     downtownWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
     shuttle?: NullableBoolFieldUpdateOperationsInput | boolean | null
     legitimate?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    laundry?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    parking?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ac?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    pet?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    dishwasher?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    cluster?: NullableIntFieldUpdateOperationsInput | number | null
     viewedBy?: UserUncheckedUpdateManyWithoutViewedHousesNestedInput
   }
 
@@ -5003,7 +5219,7 @@ export namespace Prisma {
     bathrooms?: NullableFloatFieldUpdateOperationsInput | number | null
     bedrooms?: NullableIntFieldUpdateOperationsInput | number | null
     price?: NullableFloatFieldUpdateOperationsInput | number | null
-    utitlities?: NullableFloatFieldUpdateOperationsInput | number | null
+    contact?: NullableStringFieldUpdateOperationsInput | string | null
     amenities?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     schoolDistance?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -5020,6 +5236,12 @@ export namespace Prisma {
     downtownWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
     shuttle?: NullableBoolFieldUpdateOperationsInput | boolean | null
     legitimate?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    laundry?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    parking?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ac?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    pet?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    dishwasher?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    cluster?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type HouseUpdateWithoutViewedByInput = {
@@ -5028,7 +5250,7 @@ export namespace Prisma {
     bathrooms?: NullableFloatFieldUpdateOperationsInput | number | null
     bedrooms?: NullableIntFieldUpdateOperationsInput | number | null
     price?: NullableFloatFieldUpdateOperationsInput | number | null
-    utitlities?: NullableFloatFieldUpdateOperationsInput | number | null
+    contact?: NullableStringFieldUpdateOperationsInput | string | null
     amenities?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     schoolDistance?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -5045,6 +5267,12 @@ export namespace Prisma {
     downtownWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
     shuttle?: NullableBoolFieldUpdateOperationsInput | boolean | null
     legitimate?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    laundry?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    parking?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ac?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    pet?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    dishwasher?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    cluster?: NullableIntFieldUpdateOperationsInput | number | null
     savedBy?: UserUpdateManyWithoutSavedHousesNestedInput
   }
 
@@ -5055,7 +5283,7 @@ export namespace Prisma {
     bathrooms?: NullableFloatFieldUpdateOperationsInput | number | null
     bedrooms?: NullableIntFieldUpdateOperationsInput | number | null
     price?: NullableFloatFieldUpdateOperationsInput | number | null
-    utitlities?: NullableFloatFieldUpdateOperationsInput | number | null
+    contact?: NullableStringFieldUpdateOperationsInput | string | null
     amenities?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     schoolDistance?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -5072,6 +5300,12 @@ export namespace Prisma {
     downtownWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
     shuttle?: NullableBoolFieldUpdateOperationsInput | boolean | null
     legitimate?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    laundry?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    parking?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ac?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    pet?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    dishwasher?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    cluster?: NullableIntFieldUpdateOperationsInput | number | null
     savedBy?: UserUncheckedUpdateManyWithoutSavedHousesNestedInput
   }
 
@@ -5082,7 +5316,7 @@ export namespace Prisma {
     bathrooms?: NullableFloatFieldUpdateOperationsInput | number | null
     bedrooms?: NullableIntFieldUpdateOperationsInput | number | null
     price?: NullableFloatFieldUpdateOperationsInput | number | null
-    utitlities?: NullableFloatFieldUpdateOperationsInput | number | null
+    contact?: NullableStringFieldUpdateOperationsInput | string | null
     amenities?: NullableStringFieldUpdateOperationsInput | string | null
     image?: NullableStringFieldUpdateOperationsInput | string | null
     schoolDistance?: NullableFloatFieldUpdateOperationsInput | number | null
@@ -5099,6 +5333,12 @@ export namespace Prisma {
     downtownWalkTime?: NullableFloatFieldUpdateOperationsInput | number | null
     shuttle?: NullableBoolFieldUpdateOperationsInput | boolean | null
     legitimate?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    laundry?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    parking?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ac?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    pet?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    dishwasher?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    cluster?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type UserUpdateWithoutSavedHousesInput = {
