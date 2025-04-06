@@ -63,6 +63,8 @@ Other tools: Github
 
 ## Presentation Video
 
+[Presentation Video](https://drive.google.com/file/d/1tuypTQcti064fyCcKEQ8upN0JCTsxGp8/view?usp=sharing)
+
 <video width="640" height="360" controls autoplay loop muted>
 <source src="presentation.mp4" type="video/mp4">
   Your browser does not support the video tag.
