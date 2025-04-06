@@ -36,16 +36,16 @@ Other tools: Github
 - install all necessary libraries
   
 ### Create .env and .env.local
-- .env:
-DATABASE_URL="database url"
-NEXT_PUBLIC_GEMINI_API_KEY="Gemini API Key"
-NEXT_PUBLIC_GOOGLE_MAPS_API_KEY="Google Map API Key"
+#### .env:
+- DATABASE_URL="database url"
+- NEXT_PUBLIC_GEMINI_API_KEY="Gemini API Key"
+- NEXT_PUBLIC_GOOGLE_MAPS_API_KEY="Google Map API Key"
 
-- .env.local:
-NEXT_PUBLIC_SUPABASE_URL=SuperBase URL
-NEXT_PUBLIC_SUPABASE_ANON_KEY=SuperBaseAnonKey
-NEXT_PUBLIC_GEMINI_API_KEY=Gemini API Key
-NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=Google Map API Key
+#### .env.local:
+- NEXT_PUBLIC_SUPABASE_URL=SuperBase URL
+- NEXT_PUBLIC_SUPABASE_ANON_KEY=SuperBaseAnonKey
+- NEXT_PUBLIC_GEMINI_API_KEY=Gemini API Key
+- NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=Google Map API Key
 
 ### To Run
 - npm run dev
