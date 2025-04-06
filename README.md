@@ -1,2 +1,34 @@
-# Falcon Home
-## Huy Vuong, Lam Vu, Minh Nguyen, Jialiang Yu
+# FalconHomes
+## Members: Huy Vuong, Lam Vu, Minh Nguyen, Jialiang Yu
+## Overview:
+Website that helps users search for housing near the BGSU area based on their needs, view important information like rent, location, distance from places, and compare listings. It solves the problem by offering an user-friendly and easy-to-navigate platform with information specially designed with international students in mind.
+
+## Tech Stack:
+AI: Machine Learning - Clustering for recommending similar houses based on previously viewed houses.
+API: openAI - GPT 4o API for summarizing posts into , Google Germini API for chatbot, Google Map API for calculating distances.
+Frontend: NextJS, ReactJS, TailwindCSS
+Backend: Node.js
+Database: Prisma, SQLite
+Data crawling
+Other tools: Github
+
+
+## Database Schema
+
+### 'User'
+- Email
+
+### House
+- House ID
+- Address
+- Features based on amenities gathered
+- Contact information
+- Images
+- Distance to certain locations
+
+### Prerequisites
+- Node.js
+- SQLite  
+
+
+
