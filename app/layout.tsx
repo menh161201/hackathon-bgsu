@@ -13,8 +13,8 @@ import SearchBar from "@/components/search/SearchBar";
 import { createClient } from "@/utils/supabase/server";
 import { CiLock } from "react-icons/ci";
 import { RiSparklingLine } from "react-icons/ri";
-
-
+import Map from "@/components/map/Map";
+import { AddressProvider } from "@/context/AddressContext";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -47,14 +47,17 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <AddressProvider>
           <main className="h-screen">
             <ResizablePanelGroup direction="horizontal" >
               <ResizablePanel className="shadow-xl rounded-3xl min-w-fit" >
                 <div className="flex flex-col gap-6">
                   <nav className="w-full flex justify-center border-b-foreground/10 h-16">
-                    <div className="w-full flex items-center justify-between text-sm px-6">
+                    <div className="w-full flex items-center justify-between text-sm px-6 pt-4">
                       <div className="flex gap-5 items-center text-3xl font-black">
-                        <Link href={"/"}>LOGO</Link>
+                        <Link href={"/"}>
+                          <img src="/Logo.png" alt="" className="w-32"/>
+                        </Link>
                       </div>
                       
                       {user ? <div className="flex gap-10">
@@ -85,9 +88,12 @@ export default async function RootLayout({
                 </div>
               </ResizablePanel>
               <ResizableHandle className="" withHandle/>
-              <ResizablePanel >Two three</ResizablePanel>
+              <ResizablePanel>
+              <Map />
+              </ResizablePanel>
             </ResizablePanelGroup>
           </main>
+          </AddressProvider>
         </ThemeProvider>
       </body>
     </html>

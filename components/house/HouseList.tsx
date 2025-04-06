@@ -11,8 +11,8 @@ import { AiFillSafetyCertificate } from "react-icons/ai";
 import FilterBar from "../filter/FilterBar";
 import { MdAttachMoney } from "react-icons/md";
 
-import { useState } from "react";  
-
+import { useState, useEffect } from "react";  
+import { useAddressContext } from "@/context/AddressContext";
 import {
   Dialog,
   DialogContent,
@@ -54,6 +54,9 @@ type HouseListProps = {
 };
 
 export default function HouseList({houses, userId}: HouseListProps) {
+    const { setAddresses } = useAddressContext();
+
+    
 
 
     const [filters, setFilters] = useState({
@@ -77,7 +80,42 @@ export default function HouseList({houses, userId}: HouseListProps) {
         return matchesBedrooms && matchesBathrooms && matchesPrice && matchesSchoolTime &&
         matchesGroceryTime;
     })
+
+    useEffect(() => {
+        // Extract valid addresses and update the context
+        const validAddresses = houses
+          .filter((house) => {
+            const matchesBedrooms =
+              filters.bedrooms.length === 0 || filters.bedrooms.includes(house.bedrooms || 0);
+            const matchesBathrooms =
+              filters.bathrooms.length === 0 || filters.bathrooms.includes(house.bathrooms || 0);
+            const matchesPrice = house.price !== null && house.price <= filters.maxPrice;
+            const matchesSchoolTime =
+              house.schoolWalkTime !== null && house.schoolWalkTime <= filters.maxSchoolTime;
+            const matchesGroceryTime =
+              house.groceryDistance !== null && house.groceryDistance <= filters.maxGroceryTime;
+      
+            return (
+              matchesBedrooms &&
+              matchesBathrooms &&
+              matchesPrice &&
+              matchesSchoolTime &&
+              matchesGroceryTime
+            );
+          })
+          .map((house) => house.address)
+          .filter((address): address is string => address !== null);
+      
+        setAddresses(validAddresses); // Update the context with valid addresses
+      }, [houses, filters, setAddresses]);
     
+    // useEffect(() => {
+    //     // Extract valid addresses and update the context
+    //     const validAddresses = filteredHouses
+    //     .map((house) => house.address)
+    //     .filter((address): address is string => address !== null);
+    //     setAddresses(validAddresses);
+    // }, [filteredHouses]);
     return (
         <div>
            <FilterBar filters={filters} setFilters={setFilters}/>
