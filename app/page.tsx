@@ -1,4 +1,5 @@
 import HouseList from "@/components/house/HouseList";
+import HouseListUnauthorized from "@/components/house/HouseListUnauthorized";
 import prisma from "@/db";
 import { createClient } from "@/utils/supabase/server";
 
@@ -11,6 +12,18 @@ export default async function Home() {
       savedBy: true,
     },
   });
+
+  if (!user) {
+    return (
+      <div className="">
+        <div className="px-6 space-y-6">
+          <h1 className="font-bold text-3xl">All Houses</h1>
+          {/* <p className="text-sm font-light">{houses.length} home(s) found.</p> */}
+        </div>
+        <HouseListUnauthorized houses={houses}/>
+      </div>
+    )
+  }
 
   return (
     <div className="">

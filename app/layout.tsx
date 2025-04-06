@@ -2,6 +2,7 @@
 import HeaderAuth from "@/components/header-auth"
 import { headers } from "next/headers";
 import { Geist } from "next/font/google";
+import { Josefin_Sans } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import Link from "next/link";
 import "./globals.css";
@@ -43,6 +44,12 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+
+const josefinSans = Josefin_Sans({
+  // weight: ["400", "700"],
+  display: "swap",
+  subsets: ["latin"]
+});
 export default async function RootLayout({
   children,
 }: Readonly<{
@@ -54,7 +61,7 @@ export default async function RootLayout({
   console.log(pathname);
   
   return (
-    <html lang="en" className={geistSans.className} suppressHydrationWarning>
+    <html lang="en" className={josefinSans.className} suppressHydrationWarning>
       <body className="bg-background text-foreground">
         <ThemeProvider
           attribute="class"
