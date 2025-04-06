@@ -35,14 +35,64 @@ io.on('connection', (socket) => {
       const result = await model.generateContent(`${message}
         
         
-        convert this into SQL query, if you cannot return a SQL query, return None
+        convert this into prisma quary code and this are the entities (ONLY PRISMA QUARY CODE NO OTHER):
+        {
+          'name': None,
+          'address': None,
+          'bathrooms': None,
+          'bedrooms': None,
+          'price': None,
+          'contact': None,
+          'amenities': None,
+          'image': None,
+          'school_distance_mile': None,
+          'school_walk_time_minute': None,
+          'grocery_distance_mile': None,
+          'grocery_walk_time_minute': None,
+          'grocery_store': None,
+          'grocery_address': None,
+          'pharmacy_distance_mile': None,
+          'pharmacy_walk_time_minute': None,
+          'pharmacy_store': None,
+          'pharmacy_address': None,
+          'downtown_distance_mile': None,
+          'downtown_walk_time_minute': None,
+          'shuttle': None,
+          'legitimate': None,
+          'laundry': None,
+          'parking': None,
+          'ac': None,
+          'pet': None,
+          'dishwasher': None,
+          'cluster': None
+        }
+        and here is an example of the prisma quary code:
+
+        const houses = await prisma.house.findMany({
+        where: {
+          bedrooms: 3,
+          parking: true,
+          dishwasher: true,
+          amenities: {
+            has: "1 living room"
+          }
+        }
+      });
+        
         `);
       const response = await result.response;
-      const SQLText = response.text();
+      const prismaText = response.text();
+      const ravalPrismaText = prismaText.replace(/^\s*```prisma\s*/, "")
+      const ravalPrismaText2 = ravalPrismaText.replace(/```/, "").trim();
+      let ravalPrismaText3 = ravalPrismaText2.split('=');
       const text = "Here's what I found (look at the left side of the screen)";
+
+      console.log(ravalPrismaText3[1]);
       
-      console.log('Generated SQL Response:', SQLText);
       
+      const arr = await eval(`(async () => { return ${quary} })()`);
+      
+
       // Send response back to client
       socket.emit('chat response', text);
 
